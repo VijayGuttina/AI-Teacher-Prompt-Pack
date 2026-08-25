@@ -2,7 +2,7 @@
 
 **Subject:** Primary Science
 **Initial workflow count:** 80
-**Current verification status:** Structural QA complete; execution QA pending
+**Current verification status:** Representative execution QA passed; targeted workflow spot checks pending
 
 ## Status definitions
 
@@ -26,27 +26,40 @@ Every verified workflow must record:
 
 ## Current status
 
-| Strand | Workflows | Structural status | Execution status |
+| Strand | Workflows | Structural status | Representative execution |
 |---|---:|---|---|
-| Working scientifically | 10 | Pass | Not Yet Tested |
-| Living things, plants, animals and humans | 10 | Pass | Not Yet Tested |
-| Materials and changes | 10 | Pass | Not Yet Tested |
-| Forces and motion | 10 | Pass | Not Yet Tested |
-| Light, sound, electricity and energy | 10 | Pass | Not Yet Tested |
-| Earth, space and environmental science | 10 | Pass | Not Yet Tested |
-| Classification, habitats and adaptation | 10 | Pass | Not Yet Tested |
-| Assessment, diagnosis and intervention | 10 | Pass | Not Yet Tested |
-| **Total** | **80** | **80/80 structural pass** | **0/80 execution verified** |
+| Working scientifically | 10 | Pass | Covered by representative tests |
+| Living things, plants, animals and humans | 10 | Pass | Covered by representative tests |
+| Materials and changes | 10 | Pass | Covered by representative tests |
+| Forces and motion | 10 | Pass | Covered by representative tests |
+| Light, sound, electricity and energy | 10 | Pass | Covered by representative tests |
+| Earth, space and environmental science | 10 | Pass | Covered by representative tests |
+| Classification, habitats and adaptation | 10 | Pass | Covered by representative tests |
+| Assessment, diagnosis and intervention | 10 | Pass | Covered by representative tests |
+| **Total** | **80** | **80/80 structural pass** | **18/18 representative tests passed** |
 
-## Execution QA
+## Execution QA record
 
-`EXECUTION_TEST_PLAN.md` defines the representative execution set. It currently contains 18 tests covering the principal scientific, pedagogical and output-risk patterns across the eight workflow families.
+`EXECUTION_RESULTS_2026-08-25.md` records the representative execution results.
 
-The representative set is deliberately not presented as evidence that all 80 workflows have been individually executed. Following successful family-level tests, targeted spot checks will be performed on the remaining workflows. Any workflow with materially different behaviour or risk will receive its own execution test.
+**AI tool:** ChatGPT  
+**Model:** GPT-5.6 Luna  
+**Test date:** 25 August 2026  
+**Representative executions:** 18  
+**Passed:** 18  
+**Fix required:** 0
+
+The representative tests cover the principal scientific, pedagogical and output-risk patterns across all eight workflow families.
+
+## Important verification boundary
+
+The 18 passed representative executions do **not** justify marking all 80 workflows individually as execution-verified. The remaining workflows require targeted spot checks before the complete subject is described as fully execution-verified.
+
+Any workflow with materially different behaviour or risk must receive its own execution test.
 
 ## Verification method
 
-Representative executions must test:
+Execution checks cover:
 
 1. Scientific factual accuracy
 2. Curriculum/year-group appropriateness
