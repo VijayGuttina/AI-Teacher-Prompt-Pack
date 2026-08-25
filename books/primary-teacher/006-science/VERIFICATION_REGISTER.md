@@ -2,7 +2,7 @@
 
 **Subject:** Primary Science
 **Initial workflow count:** 80
-**Verification status:** Not Yet Tested
+**Current verification status:** Structural QA complete; execution QA pending
 
 ## Status definitions
 
@@ -24,7 +24,7 @@ Every verified workflow must record:
 - Reviewer notes
 - Next scheduled review
 
-## Initial status
+## Current status
 
 | Strand | Workflows | Structural status | Execution status |
 |---|---:|---|---|
@@ -36,11 +36,17 @@ Every verified workflow must record:
 | Earth, space and environmental science | 10 | Pass | Not Yet Tested |
 | Classification, habitats and adaptation | 10 | Pass | Not Yet Tested |
 | Assessment, diagnosis and intervention | 10 | Pass | Not Yet Tested |
-| **Total** | **80** | **80/80 structural pass** | **0/80 verified** |
+| **Total** | **80** | **80/80 structural pass** | **0/80 execution verified** |
+
+## Execution QA
+
+`EXECUTION_TEST_PLAN.md` defines the representative execution set. It currently contains 18 tests covering the principal scientific, pedagogical and output-risk patterns across the eight workflow families.
+
+The representative set is deliberately not presented as evidence that all 80 workflows have been individually executed. Following successful family-level tests, targeted spot checks will be performed on the remaining workflows. Any workflow with materially different behaviour or risk will receive its own execution test.
 
 ## Verification method
 
-Representative executions should test:
+Representative executions must test:
 
 1. Scientific factual accuracy
 2. Curriculum/year-group appropriateness
