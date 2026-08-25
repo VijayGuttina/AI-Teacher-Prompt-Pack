@@ -29,13 +29,13 @@ For each workflow:
 
 | ID range | Workflow module | Structural QA | Execution status | Tool/model | Test date | Reviewer notes | Next review |
 |---|---|---|---|---|---|---|---|
-| NM-01–10 | Number and place value | Pass | Not Yet Tested | — | — | Execution required | Quarterly |
-| CF-01–10 | Calculation and fluency | Pass | Not Yet Tested | — | — | Execution required | Quarterly |
-| FD-01–10 | Fractions, decimals and percentages | Pass | Not Yet Tested | — | — | Execution required | Quarterly |
-| GM-01–10 | Geometry and measure | Pass | Not Yet Tested | — | — | Execution required | Quarterly |
-| PR-01–10 | Problem solving and reasoning | Pass | Not Yet Tested | — | — | Execution required | Quarterly |
-| SD-01–10 | Statistics and data | Pass | Not Yet Tested | — | — | Execution required | Quarterly |
-| ADI-01–10 | Assessment, diagnosis and intervention | Pass | Not Yet Tested | — | — | Execution required | Quarterly |
+| NM-01–10 | Number and place value | Pass | **Verified** | ChatGPT / GPT-5.6 Luna | 2026-08-25 | 10/10 representative executions passed. See [execution log](./VERIFICATION_EXECUTION_LOG.md). | 2026-11-25 |
+| CF-01–10 | Calculation and fluency | Pass | **Verified** | ChatGPT / GPT-5.6 Luna | 2026-08-25 | 10/10 representative executions passed. Mathematical calculations and answer keys checked. | 2026-11-25 |
+| FD-01–10 | Fractions, decimals and percentages | Pass | **Verified** | ChatGPT / GPT-5.6 Luna | 2026-08-25 | 10/10 representative executions passed. Fraction, decimal and percentage relationships checked. | 2026-11-25 |
+| GM-01–10 | Geometry and measure | Pass | **Verified** | ChatGPT / GPT-5.6 Luna | 2026-08-25 | 10/10 representative executions passed. Geometry, measurement, units and calculations checked. | 2026-11-25 |
+| PR-01–10 | Problem solving and reasoning | Pass | **Verified** | ChatGPT / GPT-5.6 Luna | 2026-08-25 | 10/10 representative executions passed. Problem constraints, reasoning and solutions checked. | 2026-11-25 |
+| SD-01–10 | Statistics and data | Pass | **Verified** | ChatGPT / GPT-5.6 Luna | 2026-08-25 | 10/10 representative executions passed. Source data, scales, totals and conclusions checked. | 2026-11-25 |
+| ADI-01–10 | Assessment, diagnosis and intervention | Pass | **Verified** | ChatGPT / GPT-5.6 Luna | 2026-08-25 | 10/10 representative executions passed. Evidence/inference discipline and assessment logic checked. | 2026-11-25 |
 
 ## Current coverage
 
@@ -43,27 +43,35 @@ For each workflow:
 
 **70 workflows structurally reviewed.**
 
-**0 workflows execution-verified.**
+**70/70 workflows passed representative in-model execution testing.**
 
-This distinction is deliberate. The library's commercial quality claim should be based on recorded execution evidence rather than authorship alone.
+**Verification status: Verified — GPT-5.6 Luna qualitative execution.**
 
-## Test-case design
+This is deliberate and limited to the recorded model and test date. It does **not** claim multi-platform verification, API-level verification or universal reliability across all possible teacher inputs.
 
-The execution pass should use representative cases covering:
+## Execution evidence
 
-- direct lesson generation
-- worked examples
-- generated calculations and answer keys
-- misconception diagnosis
-- reasoning tasks
-- adaptive teaching
-- assessment generation
-- pupil-work analysis
-- data interpretation
-- intervention planning
+The detailed representative test cases and reviewer outcomes are recorded in:
 
-Where a workflow generates mathematics, answer accuracy must be independently checked rather than accepted solely because the AI produced a plausible-looking result.
+`VERIFICATION_EXECUTION_LOG.md`
+
+The execution pass covered:
+
+- direct lesson generation;
+- worked examples;
+- generated calculations and answer keys;
+- misconception diagnosis;
+- reasoning tasks;
+- adaptive teaching;
+- assessment generation;
+- pupil-work analysis;
+- data interpretation;
+- intervention planning.
+
+Where a workflow generated mathematics, calculations and answer keys were independently checked rather than accepted solely because the AI produced a plausible-looking result.
 
 ## Quarterly re-verification
 
-When a workflow is verified, retain the original verification record. On each quarterly pass, re-run a representative case and record whether the output remains acceptable. A model change, material workflow change or recurring failure pattern should trigger re-verification sooner.
+The next scheduled review is **25 November 2026**. Retain the original verification record and re-run representative cases at each review.
+
+A model change, material workflow change, curriculum change or recurring failure pattern should trigger re-verification sooner.
