@@ -32,7 +32,7 @@ These examples are category-level demonstrations. They are intended to show the 
 
 **Workflow:** MC-07 — Separation techniques
 
-**Representative output:** Selects magnetic separation, filtration and evaporation/other suitable methods according to the stated mixture and purpose, explaining the property each method exploits.
+**Representative output:** Selects magnetic separation, filtration and another suitable method according to the stated mixture and purpose, explaining the property each method exploits.
 
 **Why useful:** Makes the scientific principle behind each technique explicit.
 
@@ -52,15 +52,15 @@ These examples are category-level demonstrations. They are intended to show the 
 
 ## 5. Light, sound and electricity
 
-**Teacher input:** Year 3, investigate which materials are transparent, translucent or opaque.
+**Teacher input:** Year 3, teach how shadows form and change.
 
-**Workflow:** LE-02 — Shadows investigation, adapted to the stated objective
+**Workflow:** LE-02 — Shadows investigation
 
-**Representative output:** Uses a light source and object to compare transmitted light and resulting shadow evidence, with a structured observation table.
+**Representative output:** Uses a light source, object and screen to investigate how changing position affects the resulting shadow, with a structured observation table.
 
 **Why useful:** Keeps the activity evidence-led rather than relying only on vocabulary recall.
 
-**Teacher check:** Ensure the activity distinguishes the relevant material properties clearly.
+**Teacher check:** Ensure the light source, object and screen can be positioned consistently and apply the school's practical safety procedures.
 
 ## 6. Earth and space
 
