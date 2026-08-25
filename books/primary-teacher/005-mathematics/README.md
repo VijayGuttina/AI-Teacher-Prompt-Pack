@@ -18,28 +18,28 @@ Mathematics Workflow
 AI Output
 ```
 
-## Planned workflow coverage
+## Current workflow coverage
 
-| Strand | Initial target |
+| Strand | Workflows |
 |---|---:|
 | Number and place value | 10 |
 | Calculation and fluency | 10 |
 | Fractions, decimals and percentages | 10 |
 | Geometry and measure | 10 |
-| Problem solving and reasoning | 12 |
-| Statistics and data | 8 |
-| Assessment, diagnosis and intervention | 12 |
-| **Initial library target** | **72** |
+| Problem solving and reasoning | 10 |
+| Statistics and data | 10 |
+| Assessment, diagnosis and intervention | 10 |
+| **Current library total** | **70** |
 
-The target is a planning ceiling, not a requirement to manufacture 72 workflows. A workflow should only be added when it represents a materially different teacher job-to-be-done.
+The original 72-workflow figure was a planning ceiling, not a requirement to manufacture additional workflows. The library is intentionally frozen at 70 because each workflow represents a materially different teacher job-to-be-done.
 
 ## Quality standard
 
-Every workflow must inherit the mathematics framework and include appropriate mathematical accuracy checks. Generated calculations, answer keys, examples, units and notation must be checked before publication.
+Every workflow inherits the Mathematics Framework and includes appropriate mathematical accuracy checks. Generated calculations, answer keys, examples, units and notation must be checked before publication.
 
 ## Verification standard
 
-Each published workflow will receive verification metadata recording:
+Each published workflow receives verification metadata recording:
 
 - AI tool
 - Exact model / model family
@@ -49,7 +49,16 @@ Each published workflow will receive verification metadata recording:
 - Reviewer notes
 - Next scheduled review
 
-The initial verification status for newly authored workflows is `Not Yet Tested` until a representative execution has been performed.
+The current library has completed representative in-model execution testing on **ChatGPT / GPT-5.6 Luna on 25 August 2026**.
+
+**70/70 workflows passed.**
+
+This is qualitative execution verification for the recorded model and date. It does not claim multi-platform, API-level or universal reliability.
+
+See:
+
+- `VERIFICATION_REGISTER.md`
+- `VERIFICATION_EXECUTION_LOG.md`
 
 ## Worked examples
 
@@ -66,3 +75,7 @@ Each example should show:
 ## Commercial design principle
 
 The Mathematics book should feel like a searchable professional reference tool. It should not become a wall of repetitive prompts merely to increase the advertised prompt count.
+
+## Repository hygiene
+
+Empty legacy placeholders have been removed. The active subject modules are the seven files represented in the current workflow coverage table above.
