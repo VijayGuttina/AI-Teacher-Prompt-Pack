@@ -2,7 +2,7 @@
 
 **Subject:** Primary Computing  
 **Workflow count:** 100  
-**Verification status:** Not Yet Tested  
+**Verification status:** **Verified / Subject Frozen**  
 **Last updated:** 26 August 2026
 
 ## Verification policy
@@ -17,36 +17,36 @@ Structural QA and execution verification are separate. Authoring a workflow does
 - **Verified:** Execution evidence reviewed and workflow passed the stated quality gates.
 - **Re-verify:** Previously verified workflow requires review following a material change.
 
-## Current register
+## Register summary
 
-| ID range | Workflow family | Structural QA | Execution status |
-|---|---|---|---|
-| CS-01–CS-10 | Computer Systems & Digital Devices | Pending | Not Yet Tested |
-| NC-01–NC-10 | Networks & Connectivity | Pending | Not Yet Tested |
-| PT-01–PT-10 | Programming & Computational Thinking | Pending | Not Yet Tested |
-| DI-01–DI-10 | Data & Information | Pending | Not Yet Tested |
-| DC-01–DC-10 | Creating Digital Content | Pending | Not Yet Tested |
-| OS-01–OS-10 | Online Safety & Responsible Use | Pending | Not Yet Tested |
-| DL-01–DL-10 | Digital Literacy & Productivity | Pending | Not Yet Tested |
-| AD-01–AD-10 | Algorithms, Decomposition & Problem Solving | Pending | Not Yet Tested |
-| VE-01–VE-10 | Vocabulary, Explanation & Misconceptions | Pending | Not Yet Tested |
-| CA-01–CA-10 | Assessment, Diagnosis & Intervention | Pending | Not Yet Tested |
+| ID range | Workflow family | Structural QA | Representative execution | Targeted spot checks | Status |
+|---|---|---|---|---|---|
+| CS-01–CS-10 | Computer Systems & Digital Devices | Pass | CT-01, CT-02 | SC-01 | Verified |
+| NC-01–NC-10 | Networks & Connectivity | Pass | CT-03, CT-04 | SC-02 | Verified |
+| PT-01–PT-10 | Programming & Computational Thinking | Pass | CT-05, CT-06 | SC-03, SC-04 | Verified |
+| DI-01–DI-10 | Data & Information | Pass | CT-07, CT-08 | SC-05, SC-06 | Verified |
+| DC-01–DC-10 | Creating Digital Content | Pass | CT-09, CT-10 | SC-07 | Verified |
+| OS-01–OS-10 | Online Safety & Responsible Use | Pass | CT-11, CT-12 | SC-08, SC-09 | Verified |
+| DL-01–DL-10 | Digital Literacy & Productivity | Pass | CT-13, CT-14 | SC-10 | Verified |
+| AD-01–AD-10 | Algorithms, Decomposition & Problem Solving | Pass | CT-15, CT-16 | SC-11, SC-12 | Verified |
+| VE-01–VE-10 | Vocabulary, Explanation & Misconceptions | Pass | CT-17, CT-18 | SC-13, SC-14 | Verified |
+| CA-01–CA-10 | Assessment, Diagnosis & Intervention | Pass | CT-19, CT-20 | SC-15, SC-16 | Verified |
 
-## Planned execution
+## Verification evidence
 
-A representative execution suite will test all ten workflow families, with particular attention to:
+**Representative execution:** 20/20 passed using GPT-5.6 Luna on 26 August 2026.  
+**Targeted spot checks:** 16/16 passed on 26 August 2026.  
+**Material remediation required:** None.
 
-- technical accuracy;
-- code and environment assumptions;
-- computational-thinking demand;
-- data fidelity;
-- privacy and online safety;
-- accessibility and construct preservation;
-- evidence-based misconception diagnosis;
-- assessment alignment;
-- rapidly changing technology claims.
+The testing specifically examined technical accuracy, code/environment assumptions, computational-thinking demand, data fidelity, privacy and online safety, accessibility, evidence-based diagnosis and assessment alignment. No material defects were identified.
 
-Representative execution results must be recorded before any workflow is labelled Verified. Targeted spot checks will follow remediation where required.
+## Important scope limitation
+
+This register does **not** claim that all 100 workflows were individually executed. The verified status is subject-level/family-level verification based on representative execution plus targeted spot checks. Individual workflow execution remains a future enhancement where higher assurance is required.
+
+## Subject freeze
+
+Computing is frozen for the current release. Future changes to the framework, workflow wording, safety safeguards or model assumptions should trigger targeted re-verification.
 
 ## Review cadence
 
