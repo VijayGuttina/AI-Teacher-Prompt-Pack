@@ -2,7 +2,7 @@
 
 **Subject:** Primary Art & Design  
 **Workflow count:** 100  
-**Current status:** Structural QA complete / Not Yet Tested
+**Current status:** Structural QA complete / Execution testing pending
 
 ## Status definitions
 
@@ -41,11 +41,17 @@ Each execution record should capture:
 | Sketchbooks, Creative Process & Progression | SK-01–SK-10 | 10 | Pass | 0/10 | Not Yet Tested |
 | Assessment, Misconceptions & Intervention | AMI-01–AMI-10 | 10 | Pass | 0/10 | Not Yet Tested |
 | Inclusion, Adaptation & Classroom Implementation | IA-01–IA-10 | 10 | Pass | 0/10 | Not Yet Tested |
-| **Total** | | **100** | **100/100 Pass** | **0/100** | **Not Yet Tested** |
+| **Total** | | **100** | **100/100 Pass** | **0/100** | **Execution Testing Pending** |
 
-## Subject-specific execution test plan
+## Execution test plan
 
-Representative testing must cover the major risk classes below:
+The representative execution plan is defined in `EXECUTION_TEST_PLAN_2026-08-27.md`. It selects 20 workflows, two from each family, and covers the major Art & Design risk classes. The worked test fixtures are in `WORKED_EXAMPLES.md`.
+
+## Execution status
+
+**No actual execution evidence has yet been recorded in this repository.** The test plan and worked examples are preparation artifacts only. They must not be treated as model-test results.
+
+## Subject-specific risk classes
 
 1. artistic agency and avoidance of a single prescribed aesthetic outcome;
 2. visual-evidence discipline when artwork or pupil work is absent or incompletely described;
