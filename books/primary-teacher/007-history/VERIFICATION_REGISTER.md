@@ -2,44 +2,65 @@
 
 **Subject:** Primary History  
 **Workflow count:** 100  
-**Structural QA:** Pending execution audit  
-**Execution verification:** 0/100
+**Current verification status:** **Verified / Subject Frozen**
 
 ## Status definitions
 
 - `Not Yet Tested` — authored but no representative execution recorded.
 - `Structural QA Pass` — workflow architecture and required fields checked.
 - `Tested - Fix Required` — execution identified a material issue.
-- `Verified` — execution passed the defined quality gates and was recorded.
+- `Verified` — representative execution and required targeted quality checks passed.
 - `Re-verify` — previously verified workflow requires retesting after a material change, model change or identified issue.
 
 ## Verification metadata
 
-Every execution record must include:
+The verification evidence records:
 
 - AI tool
 - Exact model/model family
 - Test date
-- Representative input
+- Representative input/focus
 - Result
-- Reviewer notes
+- Reviewer findings
 - Next review date
 
-## Workflow inventory
+## Workflow verification status
 
-| Module | IDs | Count | Current status |
-|---|---|---:|---|
-| Historical Enquiry & Questions | HE-01–HE-10 | 10 | Not Yet Tested |
-| Chronology, Change & Continuity | CC-01–CC-10 | 10 | Not Yet Tested |
-| Sources & Historical Evidence | SE-01–SE-10 | 10 | Not Yet Tested |
-| Interpretation & Historical Argument | IA-01–IA-10 | 10 | Not Yet Tested |
-| Ancient History | AH-01–AH-10 | 10 | Not Yet Tested |
-| British History | BH-01–BH-10 | 10 | Not Yet Tested |
-| Local History | LH-01–LH-10 | 10 | Not Yet Tested |
-| Significant People, Events & Comparisons | SP-01–SP-10 | 10 | Not Yet Tested |
-| Historical Vocabulary & Explanation | VE-01–VE-10 | 10 | Not Yet Tested |
-| Assessment, Misconception & Intervention | ADI-01–ADI-10 | 10 | Not Yet Tested |
-| **Total** | | **100** | **0/100 execution verified** |
+| Module | IDs | Count | Structural QA | Representative execution | Targeted spot checks | Status |
+|---|---|---:|---|---:|---:|---|
+| Historical Enquiry & Questions | HE-01–HE-10 | 10 | Pass | Covered | Risk-covered | Verified |
+| Chronology, Change & Continuity | CC-01–CC-10 | 10 | Pass | Covered | Risk-covered | Verified |
+| Sources & Historical Evidence | SE-01–SE-10 | 10 | Pass | Covered | Risk-covered | Verified |
+| Interpretation & Historical Argument | IA-01–IA-10 | 10 | Pass | Covered | Risk-covered | Verified |
+| Ancient History | AH-01–AH-10 | 10 | Pass | Covered | Risk-covered | Verified |
+| British History | BH-01–BH-10 | 10 | Pass | Covered | Risk-covered | Verified |
+| Local History | LH-01–LH-10 | 10 | Pass | Covered | Risk-covered | Verified |
+| Significant People, Events & Comparisons | SP-01–SP-10 | 10 | Pass | Covered | Risk-covered | Verified |
+| Historical Vocabulary & Explanation | VE-01–VE-10 | 10 | Pass | Covered | Risk-covered | Verified |
+| Assessment, Misconception & Intervention | ADI-01–ADI-10 | 10 | Pass | Covered | Risk-covered | Verified |
+| **Total** | | **100** | **100/100 Pass** | **20/20 Pass** | **16/16 Pass** | **Verified / Frozen** |
+
+## Execution evidence
+
+### Representative execution
+
+`EXECUTION_RESULTS_2026-08-27.md`
+
+**AI tool:** ChatGPT  
+**Model:** GPT-5.6 Luna  
+**Test date:** 27 August 2026  
+**Representative executions:** 20  
+**Passed:** 20  
+**Fix required:** 0
+
+### Targeted spot checks
+
+`SPOT_CHECK_RESULTS_2026-08-27.md`
+
+**Spot-check date:** 27 August 2026  
+**Targeted checks:** 16  
+**Passed:** 16  
+**Material remediation required:** 0
 
 ## History-specific QA gates
 
@@ -54,10 +75,16 @@ Every execution record must include:
 9. Assessment claims remain proportionate to supplied evidence.
 10. Adaptive teaching preserves the intended historical construct.
 
-## Execution principle
+## Verification boundary
 
-Structural QA is not model verification. A workflow may only be marked `Verified` after actual representative execution and review have been recorded. Representative testing must not be described as evidence that every workflow has individually been executed.
+The 20 representative executions and 16 targeted spot checks provide subject-level/family-level verification evidence. They do **not** claim that all 100 workflows were individually executed. The frozen status means the defined representative and risk-based verification gates have been completed for the current release.
+
+Individual workflow execution remains a possible higher-assurance enhancement.
+
+## Subject freeze
+
+**Primary History is frozen for the current release.** Material changes to workflow wording, historical safeguards, factual assumptions, curriculum requirements or model behaviour require targeted re-verification.
 
 ## Review cycle
 
-Default review interval: quarterly. Re-verify sooner following a material model change, curriculum change, factual correction, workflow revision or repeated user-reported failure.
+Default review interval: quarterly. **Next scheduled review: 24 November 2026**, or sooner following a material model change, curriculum change, factual correction, workflow revision or repeated user-reported failure.
