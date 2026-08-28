@@ -1,33 +1,69 @@
 # Drawing, Observation & Visual Recording Workflows
 
-**IDs:** DO-01 to DO-10
-
 ## DO-01 — Plan an Observational Drawing Lesson
-**ROLE:** Primary art teacher. **CONTEXT:** Objects, year group, time and materials supplied. **TASK:** Sequence observation, recording and reflection. **REQUIREMENTS:** Prioritise looking carefully over producing a prescribed style. **OUTPUT FORMAT:** Objective, modelling, pupil process, checkpoints, reflection. **QUALITY CHECKS:** Age-appropriate and practical. **OPTIONAL CUSTOMISATION:** KS1/KS2.
 
-## DO-02 — Teach Looking Before Drawing
-**ROLE:** Art teacher. **CONTEXT:** Learners tend to draw symbols rather than observed forms. **TASK:** Create a short activity that develops sustained observation. **REQUIREMENTS:** Include prompts about shape, proportion, line and detail without requiring photorealism. **OUTPUT FORMAT:** Teacher prompts, pupil task, success indicators. **QUALITY CHECKS:** Observation rather than copying style. **OPTIONAL CUSTOMISATION:** 10/20 minutes.
+**Prompt Difficulty:** Intermediate  
+**AI Model Compatibility:** ChatGPT, Claude, Gemini, Copilot  
+**Expected Output Length:** 600–900 words  
+**Typical Generation Time:** 30–60 seconds  
+**Curriculum Tags:** KS1, KS2, Drawing, Observation, Visual Recording, Lesson Planning
 
-## DO-03 — Develop Shape and Proportion
-**ROLE:** Primary art teacher. **CONTEXT:** Reference object/image supplied. **TASK:** Teach pupils to notice relative size and spatial relationships. **REQUIREMENTS:** Use comparative language and observable checks. **OUTPUT FORMAT:** Demonstration, guided practice, independent application. **QUALITY CHECKS:** No false precision. **OPTIONAL CUSTOMISATION:** KS1/KS2.
+### Editable Variables
 
-## DO-04 — Explore Line Quality
-**ROLE:** Art teacher. **CONTEXT:** Drawing objective supplied. **TASK:** Create an exercise exploring varied line qualities and their expressive or descriptive purposes. **REQUIREMENTS:** Avoid presenting one style as universally correct. **OUTPUT FORMAT:** Experiment, vocabulary, application, reflection. **QUALITY CHECKS:** Clear artistic purpose. **OPTIONAL CUSTOMISATION:** Materials.
+| Variable | Description | Example |
+|---|---|---|
+| `[YEAR_GROUP]` | Pupil year group | Year 4 |
+| `[OBJECTS]` | Objects available for observation | Leaves, seed pods and stones |
+| `[TIME]` | Available lesson time | 45 minutes |
+| `[MATERIALS]` | Drawing materials | Graphite pencils, paper, erasers |
+| `[OBJECTIVE]` | Intended learning | Notice and record relative shape, size and line |
 
-## DO-05 — Teach Tone and Shading
-**ROLE:** Primary art teacher. **CONTEXT:** Object and drawing medium supplied. **TASK:** Teach how changes in light and surface can be recorded through tone. **REQUIREMENTS:** Connect tonal choices to observation rather than formula alone. **OUTPUT FORMAT:** Demonstration, pupil practice, application, review. **QUALITY CHECKS:** Conceptual accuracy. **OPTIONAL CUSTOMISATION:** Pencil/charcoal.
+### ROLE
 
-## DO-06 — Use Viewfinders and Cropping
-**ROLE:** Art teacher. **CONTEXT:** Still-life or visual reference supplied. **TASK:** Use framing to help pupils investigate composition. **REQUIREMENTS:** Explain how selection changes what is communicated. **OUTPUT FORMAT:** Setup, questions, task, comparison, reflection. **QUALITY CHECKS:** Composition is treated as a choice. **OPTIONAL CUSTOMISATION:** KS2.
+Act as an experienced primary Art & Design teacher and curriculum specialist. Help me plan an observational drawing lesson that develops pupils' ability to look carefully, make intentional visual records and reflect on their choices. Do not treat photorealism, neatness or resemblance to an exemplar as the default definition of success.
 
-## DO-07 — Develop Sketchbook Practice
-**ROLE:** Primary art teacher. **CONTEXT:** Unit theme and learner age supplied. **TASK:** Design a sketchbook sequence showing observation, experiments, decisions and reflection. **REQUIREMENTS:** Value process evidence rather than decorative presentation alone. **OUTPUT FORMAT:** Page sequence, prompts, evidence expectations. **QUALITY CHECKS:** Process and agency preserved. **OPTIONAL CUSTOMISATION:** Unit length.
+### CONTEXT
 
-## DO-08 — Diagnose Drawing Misconceptions
-**ROLE:** Diagnostic art teacher. **CONTEXT:** Pupil drawing and explanation supplied. **TASK:** Identify a likely misconception about observation, proportion or representation. **REQUIREMENTS:** Separate conceptual misunderstanding from motor or confidence barriers. **OUTPUT FORMAT:** Evidence, hypothesis, diagnostic task, response. **QUALITY CHECKS:** No unsupported pupil labelling. **OPTIONAL CUSTOMISATION:** Individual/group.
+I am teaching `[YEAR_GROUP]`. Pupils will observe `[OBJECTS]` using `[MATERIALS]` for `[TIME]`. The intended learning is `[OBJECTIVE]`.
 
-## DO-09 — Give Useful Drawing Feedback
-**ROLE:** Primary art teacher. **CONTEXT:** Pupil drawing and intended objective supplied. **TASK:** Produce feedback that identifies a specific strength and actionable next experiment. **REQUIREMENTS:** Do not rank pupils by artistic talent or prescribe one aesthetic. **OUTPUT FORMAT:** Evidence, strength, next step, pupil question. **QUALITY CHECKS:** Specific and growth-oriented. **OPTIONAL CUSTOMISATION:** Written/verbal.
+### TASK
 
-## DO-10 — Adapt Drawing Activities for Inclusion
-**ROLE:** Inclusive art teacher. **CONTEXT:** Drawing activity and access need supplied. **TASK:** Remove access barriers while preserving meaningful visual recording and artistic decision-making. **REQUIREMENTS:** Consider alternative tools, positioning, scale or response modes without assuming the learner's needs. **OUTPUT FORMAT:** Barrier, adaptation, retained objective, independence route. **QUALITY CHECKS:** Agency and construct preserved. **OPTIONAL CUSTOMISATION:** SEND/EAL.
+Create a complete, classroom-ready lesson sequence that moves from purposeful looking to drawing, review and reflection, while preserving meaningful pupil choice.
+
+### REQUIREMENTS
+
+- Include a concise learning objective and age-appropriate success indicators.
+- Sequence teacher modelling, guided observation, independent drawing and reflection.
+- Use prompts about shape, proportion, line, negative space, detail or tonal observation where relevant.
+- Prioritise careful observation rather than imitation of a prescribed style.
+- Give practical checkpoints for noticing learning during the lesson.
+- Include at least one question requiring pupils to explain an artistic decision.
+- Do not imply that there is one correct visual outcome.
+- Keep the plan realistic for the stated time and materials.
+- Identify likely misconceptions only where relevant to the supplied context.
+
+### OUTPUT FORMAT
+
+Return the lesson under: Learning objective; Success indicators; Preparation; Lesson sequence with timings; Teacher modelling and prompts; Pupil task and choices; Assessment checkpoints; Reflection questions; Likely misconceptions and responsive teaching; Inclusion and access adaptations; Teacher notes.
+
+### QUALITY CHECKS
+
+Check that the lesson fits `[TIME]`, values observation over style copying, preserves artistic agency, assesses intended learning rather than neatness or talent, removes access barriers without unnecessarily lowering the objective, is appropriate for `[YEAR_GROUP]`, and makes no unsupported claims about pupil ability.
+
+### OPTIONAL CUSTOMISATION
+
+If useful, provide KS1/KS2 adjustments or adapt for a 20-minute session, mixed-attainment class or limited materials.
+
+### Example Input
+
+Year 4; leaves, seed pods and stones; 45 minutes; graphite pencils and cartridge paper; objective: notice and record relative shape, size and line.
+
+### Example Output
+
+Begin with purposeful looking in which pupils identify visible shapes and compare relative sizes before drawing. Model looking between object and paper rather than demonstrating a finished picture. During independent work, pupils choose what to crop, which line qualities to use and which details to record. Midway through the lesson, ask pupils to identify one relationship they noticed more accurately after looking again. Assess evidence of observation and intentional visual recording, not resemblance to the teacher example.
+
+---
+
+## DO-02 to DO-10
+
+The remaining workflows in this family retain their established subject intent and require the same full master-specification conversion before they are considered production-ready.
