@@ -1,320 +1,389 @@
 # Fractions, Decimals and Percentages Workflows
 
-## FD-01 — Fractions concept lesson
-**Purpose:** Teach a stated fraction concept using appropriate representations and examples.
+## FD-01 — Fractions Concept Lesson
+
+**Prompt Difficulty:** Advanced  
+**AI Model Compatibility:** ChatGPT, Claude, Gemini, Copilot  
+**Expected Output Length:** 700–1,000 words  
+**Curriculum Tags:** KS1, KS2, Fractions, Representation, Lesson Planning
 
 ### Editable Variables
-- Year group
-- Objective
-- Prerequisite knowledge
-- Lesson duration
-- Representations available
+`[YEAR_GROUP]` | `[OBJECTIVE]` | `[PREREQUISITE_KNOWLEDGE]` | `[DURATION]` | `[REPRESENTATIONS_AVAILABLE]`
 
 ### ROLE
-Act as an experienced primary mathematics teacher.
-
-### TASK
-Design a focused lesson for the stated fraction objective.
-
-### REQUIREMENTS
-Use concrete, pictorial and abstract representations where they clarify the concept. Include teacher modelling, guided practice and independent application. Anticipate the most relevant misconception.
-
-### OUTPUT FORMAT
-1. Objective
-2. Prerequisite check
-3. Representation/model
-4. Teacher explanation
-5. Guided practice
-6. Independent practice
-7. Assessment check
-8. Misconception
-
-### QUALITY CHECKS
-Verify every fraction statement and representation. Do not use an inappropriate representation simply for variety.
-
----
-
-## FD-02 — Fraction equivalence and comparison
-**Purpose:** Develop understanding of equivalent fractions and comparison.
-
-### Editable Variables
-- Year group
-- Fractions
-- Comparison objective
-- Known methods
-- Support level
-
-### ROLE
-Act as an experienced primary mathematics teacher.
-
-### TASK
-Create examples and practice that require pupils to establish equivalence or compare fractions using mathematically appropriate representations and reasoning.
-
-### REQUIREMENTS
-Include explanation, worked examples and reasoning. Avoid relying exclusively on procedural cross-multiplication for primary pupils.
-
-### OUTPUT FORMAT
-1. Teaching point
-2. Worked examples
-3. Guided questions
-4. Independent questions
-5. Answers
-6. Reasoning prompts
-
-### QUALITY CHECKS
-Check all equivalence and comparison results independently.
-
----
-
-## FD-03 — Fraction operations
-**Purpose:** Teach or practise an appropriate primary fraction operation.
-
-### Editable Variables
-- Year group
-- Operation
-- Denominators
-- Prerequisites
-- Difficulty
-
-### ROLE
-Act as a primary mathematics specialist.
-
-### TASK
-Generate a progression from conceptual model to procedural fluency for the supplied fraction operation.
-
-### REQUIREMENTS
-Match the operation to the stated year-group expectation. Use representations where useful and expose common errors.
-
-### OUTPUT FORMAT
-1. Objective
-2. Model
-3. Worked examples
-4. Guided practice
-5. Independent practice
-6. Answers
-7. Common misconception
-
-### QUALITY CHECKS
-Verify every calculation and ensure the procedure is valid for the specified operation.
-
----
-
-## FD-04 — Decimal place value
-**Purpose:** Teach decimal place value and relationships between units.
-
-### Editable Variables
-- Year group
-- Place-value range
-- Number set
-- Representation
-- Difficulty
-
-### ROLE
-Act as an experienced primary mathematics teacher.
-
-### TASK
-Create a lesson or practice sequence that builds conceptual understanding of decimal place value.
-
-### REQUIREMENTS
-Use place-value representations, comparisons and movement between units where appropriate. Include reasoning, not only notation exercises.
-
-### OUTPUT FORMAT
-1. Objective
-2. Representation
-3. Teacher modelling
-4. Guided practice
-5. Reasoning
-6. Independent check
-7. Answers
-
-### QUALITY CHECKS
-Verify place values, decimal notation and comparisons.
-
----
-
-## FD-05 — Decimal calculation
-**Purpose:** Create accurate practice for a specified decimal calculation skill.
-
-### Editable Variables
-- Year group
-- Operation
-- Decimal places
-- Number range
-- Difficulty
-
-### ROLE
-Act as a primary mathematics specialist.
-
-### TASK
-Create graduated decimal calculation practice matched to the stated objective.
-
-### REQUIREMENTS
-Include calculation, estimation or reasonableness checks where appropriate. Keep number ranges suitable for the year group.
-
-### OUTPUT FORMAT
-1. Worked example
-2. Practice set
-3. Reasoning/check questions
-4. Answers
-5. Teacher notes
-
-### QUALITY CHECKS
-Independently recalculate every answer.
-
----
-
-## FD-06 — Percentages concept lesson
-**Purpose:** Teach a primary percentage concept using accessible representations.
-
-### Editable Variables
-- Year group
-- Percentage set
-- Related fractions/decimals
-- Context
-- Prerequisites
-
-### ROLE
-Act as an experienced primary mathematics teacher.
-
-### TASK
-Create a conceptually grounded percentage lesson appropriate to the supplied year group.
-
-### REQUIREMENTS
-Connect percentages to fractions and decimals where curriculum-appropriate. Use visual models before unnecessary formalism.
-
-### OUTPUT FORMAT
-1. Objective
-2. Prior knowledge
-3. Representation
-4. Explanation
-5. Worked examples
-6. Practice
-7. Answers
-8. Misconception
-
-### QUALITY CHECKS
-Verify all percentage-fraction-decimal relationships.
-
----
-
-## FD-07 — Fractions, decimals and percentages conversion
-**Purpose:** Practise valid conversions among fractions, decimals and percentages.
-
-### Editable Variables
-- Year group
-- Values
-- Conversion direction
-- Difficulty
-
-### ROLE
-Act as a primary mathematics specialist.
-
-### TASK
-Create a structured conversion activity with explanation and reasoning.
-
-### REQUIREMENTS
-Use only conversions appropriate to the stated curriculum level. Include equivalent representations and a small number of reasoning questions.
-
-### OUTPUT FORMAT
-1. Teaching point
-2. Worked examples
-3. Practice
-4. Reasoning
-5. Answers
-
-### QUALITY CHECKS
-Verify every conversion and simplify fractions where required.
-
----
-
-## FD-08 — Fraction / decimal / percentage misconception diagnosis
-**Purpose:** Diagnose errors in fraction, decimal or percentage understanding from supplied pupil work.
-
-### Editable Variables
-- Year group
-- Pupil responses
-- Target objective
-- Recent teaching
-
-### ROLE
-Act as a primary mathematics diagnostic specialist.
+Act as an experienced primary mathematics teacher with strong subject knowledge of fraction structure and representation.
 
 ### CONTEXT
-Treat causes as hypotheses unless directly demonstrated by the evidence.
+Teach `[OBJECTIVE]` to `[YEAR_GROUP]` pupils. Build from `[PREREQUISITE_KNOWLEDGE]`, teach within `[DURATION]`, and use `[REPRESENTATIONS_AVAILABLE]` where they clarify the mathematics.
 
 ### TASK
-Analyse observable error patterns, identify plausible misconceptions, design a diagnostic check and recommend a focused next teaching step.
+Design a focused lesson moving from prior knowledge through representation, explanation, guided reasoning and independent application.
+
+### REQUIREMENTS
+Make explicit what the whole is and ensure all parts are equal where the representation is intended to model equal fractions. Connect concrete, pictorial and symbolic forms rather than presenting them as separate activities.
 
 ### OUTPUT FORMAT
-1. Observed error
-2. Possible misconception
-3. Evidence
-4. Diagnostic question
-5. Teaching response
-6. Follow-up check
+Objective; prerequisite check; key mathematical idea; representation sequence; teacher model; guided practice; independent practice; misconceptions; formative assessment; answers.
 
 ### QUALITY CHECKS
-Do not infer a misconception solely from one isolated wrong answer when alternative explanations remain plausible.
+Verify every fraction statement, diagram description and equivalence claim. Ensure representations genuinely model the intended concept.
+
+### OPTIONAL CUSTOMISATION
+Adapt for unit fractions, non-unit fractions, fractions of quantities or fractions greater than one.
+
+### Example Input
+Year 3; objective: understand unit and non-unit fractions; prerequisite: equal sharing; 60 minutes; fraction strips and counters.
+
+### Example Output
+Establish the whole before partitioning it into equal parts, then connect one-third and three-thirds to the same fraction structure using fraction strips and symbolic notation.
 
 ---
 
-## FD-09 — Fraction / decimal / percentage reasoning problems
-**Purpose:** Generate contextual problems requiring mathematical reasoning rather than routine conversion.
+## FD-02 — Fraction Equivalence and Comparison
+
+**Prompt Difficulty:** Advanced  
+**AI Model Compatibility:** ChatGPT, Claude, Gemini, Copilot  
+**Expected Output Length:** 600–900 words  
+**Curriculum Tags:** KS2, Fractions, Equivalence, Comparison, Reasoning
 
 ### Editable Variables
-- Year group
-- Context
-- Representation
-- Difficulty
-- Number range
+`[YEAR_GROUP]` | `[FRACTIONS]` | `[COMPARISON_OBJECTIVE]` | `[KNOWN_METHODS]` | `[SUPPORT_LEVEL]`
 
 ### ROLE
-Act as an experienced primary problem-solving teacher.
+Act as a primary mathematics specialist teaching equivalence and comparison conceptually.
+
+### CONTEXT
+Pupils in `[YEAR_GROUP]` are working with `[FRACTIONS]`. The objective is `[COMPARISON_OBJECTIVE]`; known methods are `[KNOWN_METHODS]`; support level is `[SUPPORT_LEVEL]`.
 
 ### TASK
-Create a small set of problems requiring pupils to choose and justify an appropriate fraction, decimal or percentage strategy.
+Create a progression requiring pupils to establish equivalence or compare fractions through representations, benchmarks, common structure or other mathematically appropriate reasoning.
 
 ### REQUIREMENTS
-Avoid unnecessary reading complexity. Include at least one problem where pupils must explain or justify their method.
+Avoid relying exclusively on procedural shortcuts. Include examples where numerator or denominator comparisons alone are misleading. Make the role of the whole explicit.
 
 ### OUTPUT FORMAT
-1. Problems
-2. Hints
-3. Answers
-4. Reasoning guidance
-5. Misconception notes
+Teaching point; representation; worked examples; guided questions; independent sequence; reasoning prompts; answers; misconception watchpoints; extension.
 
 ### QUALITY CHECKS
-Verify that every problem has a mathematically valid answer and that the stated information is sufficient.
+Independently verify every comparison and equivalence relationship.
+
+### OPTIONAL CUSTOMISATION
+Adapt for fraction strips, number lines, area models or benchmark fractions.
+
+### Example Input
+Year 5; fractions: 3/4, 5/8, 7/10; objective: compare fractions; known methods: equivalent fractions and benchmarks; support: mixed.
+
+### Example Output
+Sequence comparisons so pupils sometimes use one-half or one as a benchmark and sometimes generate equivalent fractions, explaining why the denominator alone does not determine size.
 
 ---
 
-## FD-10 — Adapt fraction / decimal / percentage task
-**Purpose:** Make an existing task more accessible without removing its mathematical intent.
+## FD-03 — Fraction Operations
+
+**Prompt Difficulty:** Advanced  
+**AI Model Compatibility:** ChatGPT, Claude, Gemini, Copilot  
+**Expected Output Length:** 700–1,000 words  
+**Curriculum Tags:** KS2, Fractions, Operations, Representation, Fluency
 
 ### Editable Variables
-- Original task
-- Year group
-- Access barrier
-- Mathematical objective
-- Existing support
+`[YEAR_GROUP]` | `[OPERATION]` | `[DENOMINATORS]` | `[PREREQUISITES]` | `[DIFFICULTY]`
 
 ### ROLE
-Act as an experienced primary mathematics teacher specialising in adaptive teaching.
+Act as a primary mathematics specialist teaching fraction operations from conceptual understanding toward fluent application.
+
+### CONTEXT
+Pupils in `[YEAR_GROUP]` are learning `[OPERATION]` using `[DENOMINATORS]`. Relevant prerequisites are `[PREREQUISITES]`; difficulty is `[DIFFICULTY]`.
 
 ### TASK
-Adapt the supplied task to address the stated access barrier while preserving the core mathematical demand.
+Create a progression from a mathematically faithful model through worked examples, guided practice and independent application.
 
 ### REQUIREMENTS
-Consider representation, language load, worked-example support, number of items and response format. Do not assume a diagnosis.
+Match the operation to the stated year group and prerequisite knowledge. Explain why the procedure works. Include common errors and at least one reasoning task requiring pupils to evaluate or compare methods.
 
 ### OUTPUT FORMAT
-1. Original mathematical objective
-2. Barrier
-3. Adapted task
-4. Teacher support
-5. Route toward independence
-6. Check that mathematical demand is preserved
+Objective; prerequisite check; conceptual model; worked examples; guided practice; independent practice; reasoning task; answers; misconceptions; assessment.
 
 ### QUALITY CHECKS
-The adaptation must not silently change the intended mathematics.
+Verify every calculation, simplification and procedural claim.
+
+### OPTIONAL CUSTOMISATION
+Adapt for addition, subtraction, multiplication by integers or fractions of quantities where appropriate.
+
+### Example Input
+Year 5; operation: add fractions with related denominators; denominators: 2, 4, 8; prerequisites: equivalence; difficulty: mixed.
+
+### Example Output
+Use equivalent fraction strips to show why 1/2 must be expressed as 4/8 before combining it with 3/8, linking the representation directly to symbolic recording.
+
+---
+
+## FD-04 — Decimal Place Value
+
+**Prompt Difficulty:** Advanced  
+**AI Model Compatibility:** ChatGPT, Claude, Gemini, Copilot  
+**Expected Output Length:** 600–900 words  
+**Curriculum Tags:** KS2, Decimals, Place Value, Representation, Reasoning
+
+### Editable Variables
+`[YEAR_GROUP]` | `[PLACE_VALUE_RANGE]` | `[NUMBER_SET]` | `[REPRESENTATION]` | `[DIFFICULTY]`
+
+### ROLE
+Act as an experienced primary mathematics teacher specialising in decimal place-value structure.
+
+### CONTEXT
+Teach `[YEAR_GROUP]` pupils using `[PLACE_VALUE_RANGE]`, `[NUMBER_SET]` and `[REPRESENTATION]`. Set challenge at `[DIFFICULTY]`.
+
+### TASK
+Create a sequence that develops understanding of decimal units, relative size and relationships between adjacent place-value positions.
+
+### REQUIREMENTS
+Make explicit that each move one place to the right represents a unit one tenth the size, and each move left represents a unit ten times the size. Include comparison and reasoning rather than notation exercises alone.
+
+### OUTPUT FORMAT
+Objective; key structure; representation; teacher modelling; guided practice; comparison tasks; reasoning; independent check; answers; misconceptions.
+
+### QUALITY CHECKS
+Verify decimal notation, place values and all comparisons. Do not use digit-count rules that misrepresent decimal magnitude.
+
+### OPTIONAL CUSTOMISATION
+Adapt for tenths, hundredths or thousandths where curriculum-appropriate.
+
+### Example Input
+Year 4; range: tenths and hundredths; numbers: 0.4, 0.04, 0.44; representation: place-value chart; challenge: high.
+
+### Example Output
+Use the three numbers to expose the difference between a digit's value and its symbol, requiring pupils to explain why 0.4 is greater than 0.04.
+
+---
+
+## FD-05 — Decimal Calculation
+
+**Prompt Difficulty:** Advanced  
+**AI Model Compatibility:** ChatGPT, Claude, Gemini, Copilot  
+**Expected Output Length:** 600–900 words  
+**Curriculum Tags:** KS2, Decimals, Calculation, Estimation, Fluency
+
+### Editable Variables
+`[YEAR_GROUP]` | `[OPERATION]` | `[DECIMAL_PLACES]` | `[NUMBER_RANGE]` | `[DIFFICULTY]`
+
+### ROLE
+Act as a primary mathematics specialist designing accurate decimal calculation practice.
+
+### CONTEXT
+Pupils in `[YEAR_GROUP]` are learning `[OPERATION]` with `[DECIMAL_PLACES]` decimal places within `[NUMBER_RANGE]`. Difficulty is `[DIFFICULTY]`.
+
+### TASK
+Create graduated practice that connects decimal calculation to place-value structure and includes estimation or reasonableness checks.
+
+### REQUIREMENTS
+Avoid teaching decimal-point movement as an unexplained trick. Align calculations by place value where relevant and include examples that reveal whether pupils understand magnitude.
+
+### OUTPUT FORMAT
+Teaching point; conceptual model; worked example; practice sequence; estimation checks; reasoning questions; answers; teacher notes; misconceptions.
+
+### QUALITY CHECKS
+Independently recalculate every answer and verify decimal placement.
+
+### OPTIONAL CUSTOMISATION
+Adapt for addition, subtraction, multiplication by whole numbers or curriculum-appropriate division.
+
+### Example Input
+Year 6; operation: addition and subtraction; up to two decimal places; range: money-style values under 100; mixed difficulty.
+
+### Example Output
+Include estimation before exact calculation and examples such as 4.7 + 3.86 to reveal whether pupils align digits by place value rather than by decimal length.
+
+---
+
+## FD-06 — Percentages Concept Lesson
+
+**Prompt Difficulty:** Advanced  
+**AI Model Compatibility:** ChatGPT, Claude, Gemini, Copilot  
+**Expected Output Length:** 600–900 words  
+**Curriculum Tags:** KS2, Percentages, Fractions, Decimals, Representation
+
+### Editable Variables
+`[YEAR_GROUP]` | `[PERCENTAGE_SET]` | `[RELATED_FRACTIONS_DECIMALS]` | `[CONTEXT]` | `[PREREQUISITES]`
+
+### ROLE
+Act as an experienced primary mathematics teacher teaching percentages through proportional structure.
+
+### CONTEXT
+Pupils in `[YEAR_GROUP]` are learning `[PERCENTAGE_SET]`, linked where appropriate to `[RELATED_FRACTIONS_DECIMALS]`. The context is `[CONTEXT]`; prerequisites are `[PREREQUISITES]`.
+
+### TASK
+Create a conceptually grounded lesson connecting percentages to a whole of 100 and, where appropriate, to equivalent fractions and decimals.
+
+### REQUIREMENTS
+Use visual models or scaling relationships before unnecessary formalism. State clearly when the whole is not 100 and explain how the percentage still represents a proportion of the whole.
+
+### OUTPUT FORMAT
+Objective; prior knowledge; key structure; representation; explanation; worked examples; guided practice; independent practice; answers; misconception; assessment.
+
+### QUALITY CHECKS
+Verify all percentage, fraction and decimal relationships independently.
+
+### OPTIONAL CUSTOMISATION
+Adapt for 10%, 25%, 50%, 75% and other curriculum-appropriate values.
+
+### Example Input
+Year 6; percentages: 10%, 25%, 50%; related fractions: 1/10, 1/4, 1/2; context: quantities; prerequisites: equivalent fractions.
+
+### Example Output
+Show how 25% means one quarter of the same whole and use a range of quantities so pupils connect the proportional relationship to efficient calculation.
+
+---
+
+## FD-07 — Fractions, Decimals and Percentages Conversion
+
+**Prompt Difficulty:** Advanced  
+**AI Model Compatibility:** ChatGPT, Claude, Gemini, Copilot  
+**Expected Output Length:** 600–900 words  
+**Curriculum Tags:** KS2, Fractions, Decimals, Percentages, Equivalence
+
+### Editable Variables
+`[YEAR_GROUP]` | `[VALUES]` | `[CONVERSION_DIRECTION]` | `[DIFFICULTY]` | `[REPRESENTATIONS]`
+
+### ROLE
+Act as a primary mathematics specialist developing flexible understanding across equivalent representations.
+
+### CONTEXT
+Pupils in `[YEAR_GROUP]` will work with `[VALUES]`, converting in `[CONVERSION_DIRECTION]` at `[DIFFICULTY]` level using `[REPRESENTATIONS]` where helpful.
+
+### TASK
+Create a structured activity in which pupils explain, derive and use equivalent fraction, decimal and percentage forms.
+
+### REQUIREMENTS
+Use only curriculum-appropriate conversions. Avoid presenting conversion as disconnected memorisation. Include reasoning about why representations are equivalent and identify when fractions should be simplified.
+
+### OUTPUT FORMAT
+Teaching point; worked examples; conversion activity; reasoning questions; representation links; answers; misconception watchpoints; extension.
+
+### QUALITY CHECKS
+Verify every conversion and simplification independently.
+
+### OPTIONAL CUSTOMISATION
+Adapt for benchmarks, terminating decimals or mixed representation sorting.
+
+### Example Input
+Year 6; values: 1/2, 1/4, 3/5, 0.25, 0.6, 25%, 60%; direction: all forms; difficulty: mixed; representations: hundred grids and fraction strips.
+
+### Example Output
+Require pupils to group equivalent values before recording each group in all available forms, then justify one conversion using a hundred-grid or proportional argument.
+
+---
+
+## FD-08 — Fraction, Decimal or Percentage Misconception Diagnosis
+
+**Prompt Difficulty:** Advanced  
+**AI Model Compatibility:** ChatGPT, Claude, Gemini, Copilot  
+**Expected Output Length:** 600–900 words  
+**Curriculum Tags:** KS1, KS2, Fractions, Decimals, Percentages, Diagnosis
+
+### Editable Variables
+`[YEAR_GROUP]` | `[PUPIL_RESPONSES]` | `[TARGET_OBJECTIVE]` | `[RECENT_TEACHING]` | `[REPRESENTATIONS_USED]`
+
+### ROLE
+Act as a primary mathematics diagnostic specialist interpreting pupil evidence cautiously.
+
+### CONTEXT
+Pupils in `[YEAR_GROUP]` produced `[PUPIL_RESPONSES]` while learning `[TARGET_OBJECTIVE]`. Relevant recent teaching is `[RECENT_TEACHING]`; representations used were `[REPRESENTATIONS_USED]`.
+
+### TASK
+Analyse observable response patterns, identify plausible explanations and design a diagnostic check that distinguishes between them before recommending teaching.
+
+### REQUIREMENTS
+Treat causes as hypotheses unless directly demonstrated. Consider representation confusion, language, prerequisite gaps and procedural slips as alternatives to a stable misconception.
+
+### OUTPUT FORMAT
+Observed evidence; hypotheses; confidence; diagnostic task; expected response patterns; interpretation; targeted teaching; follow-up check.
+
+### QUALITY CHECKS
+Do not infer a misconception solely from an isolated wrong answer where plausible alternatives remain.
+
+### OPTIONAL CUSTOMISATION
+Adapt for pupil conferencing, small-group intervention or whole-class assessment.
+
+### Example Input
+Year 5; response: 0.8 is smaller than 0.75 because 8 is smaller than 75; objective: compare decimals; recent teaching: tenths and hundredths; representation: place-value chart.
+
+### Example Output
+Test whether the pupil can compare tenths and hundredths when represented explicitly before deciding whether the issue is decimal magnitude, digit comparison or task interpretation.
+
+---
+
+## FD-09 — Fraction, Decimal and Percentage Reasoning Problems
+
+**Prompt Difficulty:** Advanced  
+**AI Model Compatibility:** ChatGPT, Claude, Gemini, Copilot  
+**Expected Output Length:** 600–900 words  
+**Curriculum Tags:** KS1, KS2, Problem Solving, Fractions, Decimals, Percentages
+
+### Editable Variables
+`[YEAR_GROUP]` | `[CONTEXT]` | `[REPRESENTATION_FOCUS]` | `[DIFFICULTY]` | `[NUMBER_RANGE]` | `[NUMBER_OF_PROBLEMS]`
+
+### ROLE
+Act as an experienced primary mathematics problem-solving specialist.
+
+### CONTEXT
+Create `[NUMBER_OF_PROBLEMS]` for `[YEAR_GROUP]` using `[CONTEXT]`, focused on `[REPRESENTATION_FOCUS]`, within `[NUMBER_RANGE]` and at `[DIFFICULTY]` level.
+
+### TASK
+Generate problems requiring pupils to choose and justify a fraction, decimal or percentage strategy rather than simply execute a named conversion.
+
+### REQUIREMENTS
+Keep reading demand proportionate to the mathematical objective. Include at least one problem with more than one valid method and one requiring explanation of why a method or answer is reasonable.
+
+### OUTPUT FORMAT
+Problems; mathematical focus; hints; expected strategies; answers; reasoning guidance; misconception notes; extension.
+
+### QUALITY CHECKS
+Verify every answer, ensure information is sufficient and state any assumptions required by the context.
+
+### OPTIONAL CUSTOMISATION
+Adapt for oral reasoning, collaborative problem solving or written explanation.
+
+### Example Input
+Year 6; context: comparing discounts; focus: percentages and decimals; difficulty: high; range: values under 200; 5 problems.
+
+### Example Output
+Include a comparison where different percentage discounts apply to different starting prices, requiring pupils to calculate actual amounts rather than assuming the larger percentage always produces the greater reduction.
+
+---
+
+## FD-10 — Adapt a Fractions, Decimals or Percentages Task
+
+**Prompt Difficulty:** Advanced  
+**AI Model Compatibility:** ChatGPT, Claude, Gemini, Copilot  
+**Expected Output Length:** 600–900 words  
+**Curriculum Tags:** KS1, KS2, Adaptive Teaching, Fractions, Decimals, Percentages
+
+### Editable Variables
+`[ORIGINAL_TASK]` | `[YEAR_GROUP]` | `[ACCESS_BARRIER]` | `[MATHEMATICAL_OBJECTIVE]` | `[EXISTING_SUPPORT]`
+
+### ROLE
+Act as an experienced primary mathematics teacher specialising in adaptive teaching and inclusive mathematical access.
+
+### CONTEXT
+The original task is `[ORIGINAL_TASK]` for `[YEAR_GROUP]`. The mathematical objective is `[MATHEMATICAL_OBJECTIVE]`; the access barrier is `[ACCESS_BARRIER]`; existing support is `[EXISTING_SUPPORT]`.
+
+### TASK
+Adapt the task to remove the identified barrier while preserving the core mathematical construct and creating a route toward increasing independence.
+
+### REQUIREMENTS
+Consider representation, language, worked examples, response format, recording load and quantity of practice. Do not automatically simplify the numbers or mathematics. Distinguish access adaptation from a change to the assessed construct.
+
+### OUTPUT FORMAT
+Original construct; barrier analysis; adapted task; representation or scaffold; teacher support; route to independence; equivalent evidence; demand-preservation check; review point.
+
+### QUALITY CHECKS
+The adaptation must not silently change the intended mathematics or allow a support mechanism to complete the reasoning for the pupil.
+
+### OPTIONAL CUSTOMISATION
+Adapt for SEND, EAL, working-memory, language, motor or sensory barriers.
+
+### Example Input
+Year 5; original task: compare 3/4, 5/8 and 7/10 and justify the order; barrier: difficulty processing dense written instructions; objective: compare fractions; existing support: visual word bank.
+
+### Example Output
+Use a visible sequence of comparison steps and optional fraction representations while retaining the same fractions and requiring the pupil to supply the mathematical justification independently.
