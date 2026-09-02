@@ -88,8 +88,16 @@ A workflow passes representative execution when the generated result:
 | R02 | DE-10 Plan a Design Challenge | Year 4; create a freestanding structure for a toy figure; limited card, paper straws and masking tape | PASS | Brief can retain multiple viable solutions and meaningful constraints without prescribing a single construction approach; agency and justification are explicit. |
 | R03 | EC-05 Diagnose Circuit Faults | Year 6; battery, two wires, bulb and holder; bulb does not light | PASS | Troubleshooting starts from observable evidence, checks one plausible cause at a time and distinguishes connection, component and power possibilities; safe checks and recording are explicit. |
 | R04 | CN-05 Teach Food Hygiene and Safety | Year 5; preparing a no-cook fruit snack with classroom knives and chopping boards | PASS | Output structure covers before, during and after routines, relevant hygiene, tool use, cleaning and school-specific procedure boundaries without inventing an allergen-control process. |
+| R05 | DR-01 Research the User | Year 5; design a desk organiser for pupils; teacher supplies intended users and classroom context | PASS | Research questions can elicit functional needs without unnecessary personal data; outputs connect findings to design implications and the brief. |
+| R06 | DR-09 Investigate Material Suitability | Year 6; compare card, corrugated cardboard and plywood for a small structure; required property is stiffness | PASS | Prompt requires comparison against the supplied functional requirement, uses established or supplied properties, and explicitly flags uncertainty rather than inventing material performance. |
+| R07 | SM-03 Investigate Levers | Year 5; card strip, ruler, pivot and small classroom load | PASS | Output can define pivot, load and effort accurately, structure a manageable investigation and record observations without overstating mechanical advantage. |
+| R08 | SM-09 Diagnose Mechanism Failure | Year 6; linkage moves unevenly and catches at one point | PASS | Prompt separates observed behaviour from hypotheses and requires discriminating checks before diagnosis, reducing unsupported causal claims. |
+| R09 | MT-02 Investigate Material Properties | Year 4; compare paper, card and fabric for flexibility | PASS | Investigation defines the property, uses a manageable comparison, separates observation from conclusion and includes practical safety guidance. |
+| R10 | MT-10 Adapt Materials and Construction Tasks for Inclusion | Year 5; textile joining task; pupil needs adapted access to tools and recording | PASS | Adaptation preserves the construction objective, considers grip, workspace, sequencing and recording, and distinguishes access support from changing the learning demand. |
+| R11 | PM-05 Testing a Prototype | Year 5; prototype container must hold a stated classroom load and remain stable | PASS | Test design links directly to success criteria, uses observable evidence and consistent conditions, and supports evidence-led improvement decisions. |
+| R12 | PM-06 Iterative Improvement | Year 6; prototype vehicle veers to one side during repeated tests | PASS | Workflow requires pupils to identify evidence, generate alternatives, select a justified modification, retest and record whether performance improved. |
 
-**Representative execution progress: 4/20 PASS.**
+**Representative execution progress: 12/20 PASS.**
 
 ## Remediation rule
 
@@ -109,10 +117,12 @@ The subject may be marked **FROZEN** only when:
 
 **Structural QA:** PASS
 
-**Representative execution:** 4/20 PASS, 16 pending
+**Representative execution:** 12/20 PASS, 8 pending
 
 **Targeted spot checks:** PENDING
 
 **Subject freeze:** NOT YET AUTHORISED
+
+**Last execution update:** 2026-09-02
 
 **Next review:** 2026-12-02
