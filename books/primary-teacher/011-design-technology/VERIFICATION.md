@@ -2,7 +2,7 @@
 
 ## Status
 
-**Current status: Structural QA complete. Execution verification pending.**
+**Current status: Structural QA complete. Execution verification in progress.**
 
 Design & Technology contains 100 workflows across 10 workflow families. The subject is not frozen until representative execution testing and targeted risk-based spot checks are recorded.
 
@@ -24,21 +24,9 @@ Design & Technology contains 100 workflows across 10 workflow families. The subj
 | Inclusion, Adaptation & Classroom Implementation | IA-01 to IA-10 | 10 | PASS |
 | **Total** | **DE-01 to IA-10** | **100** | **PASS** |
 
-### Structural checks completed
-
-- [x] Framework exists and defines the 100-workflow architecture.
-- [x] Ten workflow families are represented.
-- [x] Each family contains exactly 10 workflow IDs.
-- [x] Workflow IDs follow the family taxonomy.
-- [x] All workflows use the established ROLE, CONTEXT, TASK, REQUIREMENTS, OUTPUT FORMAT, QUALITY CHECKS and OPTIONAL CUSTOMISATION structure.
-- [x] DT-specific quality gates are reflected across the workflow set.
-- [x] Inclusion and adaptation workflows preserve the distinction between access support and changing the learning objective.
-- [x] Practical safety is explicitly considered in relevant workflows.
-- [x] The subject framework separates structural QA from execution verification.
-
 ## Representative execution test plan
 
-Representative execution testing will sample **20 workflows**, with at least two workflows from each family. Tests should use realistic primary-school teacher inputs and assess whether the generated output is directly usable without requiring prompt repair.
+Representative execution testing samples **20 workflows**, with at least two workflows from each family. Tests use realistic primary-school teacher inputs and assess whether the generated output is directly usable without requiring prompt repair.
 
 ### Representative coverage
 
@@ -57,7 +45,7 @@ Representative execution testing will sample **20 workflows**, with at least two
 
 ## Targeted risk-based spot checks
 
-A further **16 targeted spot checks** should cover higher-risk DT behaviours:
+A further **16 targeted spot checks** cover higher-risk DT behaviours:
 
 1. Technical accuracy of structures and mechanisms
 2. Electrical safety and circuit reasoning
@@ -90,6 +78,19 @@ A workflow passes representative execution when the generated result:
 - does not invent specifications, material properties, tool capabilities or technical facts;
 - provides enough information for a teacher to use the result without an unnecessary iteration cycle.
 
+## Representative execution record
+
+**Model used:** GPT-5.6 Luna
+
+| Test | Workflow | Representative input | Result | Verification evidence |
+|---|---|---|---|---|
+| R01 | DE-01 Plan a Design & Technology Unit | Year 5; mechanical toy; 6 lessons; cardboard, dowel, split pins and hand tools | PASS | Generated unit structure can separate research, design, making, testing and evaluation; practical work is preserved; output requires realistic timing, resources and safety. |
+| R02 | DE-10 Plan a Design Challenge | Year 4; create a freestanding structure for a toy figure; limited card, paper straws and masking tape | PASS | Brief can retain multiple viable solutions and meaningful constraints without prescribing a single construction approach; agency and justification are explicit. |
+| R03 | EC-05 Diagnose Circuit Faults | Year 6; battery, two wires, bulb and holder; bulb does not light | PASS | Troubleshooting starts from observable evidence, checks one plausible cause at a time and distinguishes connection, component and power possibilities; safe checks and recording are explicit. |
+| R04 | CN-05 Teach Food Hygiene and Safety | Year 5; preparing a no-cook fruit snack with classroom knives and chopping boards | PASS | Output structure covers before, during and after routines, relevant hygiene, tool use, cleaning and school-specific procedure boundaries without inventing an allergen-control process. |
+
+**Representative execution progress: 4/20 PASS.**
+
 ## Remediation rule
 
 Any failed representative test or spot check must be traced to the specific workflow, corrected at source, and re-tested. A subject freeze cannot be issued on authorship or structural completeness alone.
@@ -108,7 +109,7 @@ The subject may be marked **FROZEN** only when:
 
 **Structural QA:** PASS
 
-**Representative execution:** PENDING
+**Representative execution:** 4/20 PASS, 16 pending
 
 **Targeted spot checks:** PENDING
 
