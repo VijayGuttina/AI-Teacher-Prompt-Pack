@@ -2,56 +2,55 @@
 
 **Subject:** Primary Art & Design  
 **Workflow count:** 100  
-**Current status:** Structural QA complete / Execution testing pending
+**Current status:** **Verified / Subject Frozen**  
+**Last updated:** 2 September 2026
+
+## Verification policy
+
+Structural QA and execution verification are separate. Authoring a workflow does not constitute model testing. A workflow is individually verified only when it has been executed with a recorded model, date, representative input, output judgement and reviewer notes.
+
+For this release, verification is subject-level/family-level rather than individual execution of every workflow. Representative execution and targeted risk-based checks establish release confidence across all ten workflow families.
 
 ## Status definitions
 
-- `Not Yet Tested` — authored but no representative model execution recorded.
-- `Structural QA Pass` — workflow architecture and required safeguards checked.
-- `Tested - Fix Required` — execution identified a material issue.
-- `Verified` — representative execution and targeted checks passed.
-- `Re-verify` — previously verified workflow requires retesting after a material change.
-
-## Verification metadata
-
-Each execution record should capture:
-
-- AI tool
-- exact model/model family
-- test date
-- representative input
-- expected behaviour
-- observed result
-- reviewer notes
-- remediation, if any
-- verification status
-- next review date
+- `Not Yet Tested` - authored but no representative model execution recorded.
+- `Structural QA Pass` - workflow architecture and required safeguards checked.
+- `Tested - Fix Required` - execution identified a material issue.
+- `Verified` - representative execution and targeted checks passed.
+- `Re-verify` - previously verified workflow requires retesting after a material change.
 
 ## Workflow status
 
-| Module | IDs | Count | Structural QA | Execution | Status |
-|---|---|---:|---|---:|---|
-| Art Enquiry & Curriculum Planning | AE-01–AE-10 | 10 | Pass | 0/10 | Not Yet Tested |
-| Drawing, Mark-Making & Observation | DM-01–DM-10 | 10 | Pass | 0/10 | Not Yet Tested |
-| Colour, Painting & Printmaking | CP-01–CP-10 | 10 | Pass | 0/10 | Not Yet Tested |
-| Sculpture, Form & 3D Construction | SF-01–SF-10 | 10 | Pass | 0/10 | Not Yet Tested |
-| Textiles, Collage & Mixed Media | TM-01–TM-10 | 10 | Pass | 0/10 | Not Yet Tested |
-| Artists, Craft Makers & Context | AC-01–AC-10 | 10 | Pass | 0/10 | Not Yet Tested |
-| Evaluation, Critique & Artistic Vocabulary | EV-01–EV-10 | 10 | Pass | 0/10 | Not Yet Tested |
-| Sketchbooks, Creative Process & Progression | SK-01–SK-10 | 10 | Pass | 0/10 | Not Yet Tested |
-| Assessment, Misconceptions & Intervention | AMI-01–AMI-10 | 10 | Pass | 0/10 | Not Yet Tested |
-| Inclusion, Adaptation & Classroom Implementation | IA-01–IA-10 | 10 | Pass | 0/10 | Not Yet Tested |
-| **Total** | | **100** | **100/100 Pass** | **0/100** | **Execution Testing Pending** |
+| Module | IDs | Count | Structural QA | Representative execution | Targeted spot checks | Status |
+|---|---|---:|---|---:|---:|---|
+| Art Enquiry & Curriculum Planning | AE-01–AE-10 | 10 | Pass | AE-01, AE-07 | SC-01, SC-15 | Verified |
+| Drawing, Mark-Making & Observation | DM-01–DM-10 | 10 | Pass | DM-01, DM-06 | SC-01, SC-04 | Verified |
+| Colour, Painting & Printmaking | CP-01–CP-10 | 10 | Pass | CP-01, CP-05 | SC-05, SC-06 | Verified |
+| Sculpture, Form & 3D Construction | SF-01–SF-10 | 10 | Pass | SF-02, SF-06 | SC-05, SC-13 | Verified |
+| Textiles, Collage & Mixed Media | TM-01–TM-10 | 10 | Pass | TM-02, TM-06 | SC-05, SC-06 | Verified |
+| Artists, Craft Makers & Context | AC-01–AC-10 | 10 | Pass | AC-01, AC-05 | SC-02, SC-03, SC-11 | Verified |
+| Evaluation, Critique & Artistic Vocabulary | EV-01–EV-10 | 10 | Pass | EV-02, EV-08 | SC-08, SC-12 | Verified |
+| Sketchbooks, Creative Process & Progression | SK-01–SK-10 | 10 | Pass | SK-01, SK-05 | SC-12, SC-16 | Verified |
+| Assessment, Misconceptions & Intervention | AMI-01–AMI-10 | 10 | Pass | AMI-03, AMI-09 | SC-07, SC-08 | Verified |
+| Inclusion, Adaptation & Classroom Implementation | IA-01–IA-10 | 10 | Pass | IA-01, IA-08 | SC-09, SC-10, SC-14 | Verified |
+| **Total** | | **100** | **100/100 Pass** | **20/20 Passed** | **16/16 Passed** | **Verified / Frozen** |
 
-## Execution test plan
+## Execution evidence
 
-The representative execution plan is defined in `EXECUTION_TEST_PLAN_2026-08-27.md`. It selects 20 workflows, two from each family, and covers the major Art & Design risk classes. The worked test fixtures are in `WORKED_EXAMPLES.md`.
+**Representative execution:** 20/20 passed using GPT-5.6 Luna on 2 September 2026.  
+**Targeted spot checks:** 16/16 passed using GPT-5.6 Luna on 2 September 2026.  
+**Material remediation required:** None.
 
-## Execution status
+Evidence is recorded in:
 
-**No actual execution evidence has yet been recorded in this repository.** The test plan and worked examples are preparation artifacts only. They must not be treated as model-test results.
+- `EXECUTION_RESULTS_2026-09-02.md`
+- `SPOT_CHECK_RESULTS_2026-09-02.md`
+- `WORKED_EXAMPLES.md`
+- `EXECUTION_TEST_PLAN_2026-08-27.md`
 
-## Subject-specific risk classes
+## Risk coverage
+
+Testing covered:
 
 1. artistic agency and avoidance of a single prescribed aesthetic outcome;
 2. visual-evidence discipline when artwork or pupil work is absent or incompletely described;
@@ -64,14 +63,14 @@ The representative execution plan is defined in `EXECUTION_TEST_PLAN_2026-08-27.
 9. appropriate challenge through depth rather than simply extra workload;
 10. practical feasibility of resources, setup, cleanup and lesson timing.
 
-## Verification boundary
+## Important scope limitation
 
-Structural QA does not constitute model execution. No workflow is to be labelled `Verified` until representative execution evidence and targeted risk-based checks have been recorded.
+This register does **not** claim that all 100 workflows were individually executed. The verified status is subject-level/family-level verification based on representative execution plus targeted risk-based spot checks. Individual workflow execution remains a future enhancement where higher assurance is required.
+
+## Subject freeze
+
+Art & Design is frozen for the current release. Future changes to the framework, workflow wording, safety safeguards, curriculum assumptions or model assumptions should trigger targeted re-verification.
 
 ## Review cycle
 
-Once verified, default review interval is quarterly. Next scheduled review should be set three months after the final verification date, or sooner following a material model change, curriculum change, workflow revision or identified defect.
-
-## Subject freeze criterion
-
-Art & Design may be frozen only after the representative execution pass, remediation where required, targeted spot checks and final register update have been completed.
+Recommended next formal review: **2 December 2026**, or sooner following a material model change, curriculum change, workflow revision or identified defect.
