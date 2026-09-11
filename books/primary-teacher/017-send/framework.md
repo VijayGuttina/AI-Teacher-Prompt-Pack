@@ -23,16 +23,16 @@ SEND support should begin with the pupil, the intended learning and the barriers
 
 | Family | Code Range | Focus |
 |---|---|---|
-| SEND Curriculum & Lesson Planning | SE-01 to SE-10 | Inclusive curriculum planning, lesson design and learning intentions |
-| Identification, Observation & Barriers to Learning | OB-01 to OB-10 | Evidence gathering, observation, barriers and classroom response |
-| Adaptive Teaching & Scaffolding | AT-01 to AT-10 | Flexible teaching, modelling, scaffolding and gradual independence |
-| Communication, Language & Interaction | CL-01 to CL-10 | Communication access, receptive/expressive language and interaction |
-| Cognition, Learning & Executive Function | CE-01 to CE-10 | Memory, attention, organisation, processing and learning strategies |
-| Sensory, Physical & Access Needs | SP-01 to SP-10 | Sensory access, physical access, environment and participation |
-| Neurodiversity, Regulation & Classroom Participation | NR-01 to NR-10 | Neurodiversity-aware practice, regulation, participation and predictability |
-| Assessment, Progress & Intervention | AP-01 to AP-10 | Assessment, progress evidence, intervention and review |
-| Resources, Technology & Accessibility | RA-01 to RA-10 | Accessible resources, assistive technology and digital learning |
-| Partnership, Inclusion & Implementation | PI-01 to PI-10 | Pupil voice, families, staff collaboration and whole-school implementation |
+| SEND Curriculum & Lesson Planning | SEND-01 to SEND-10 | Inclusive curriculum planning, lesson design and learning intentions |
+| Identification, Observation & Barriers to Learning | SEND-11 to SEND-20 | Evidence gathering, observation, barriers and classroom response |
+| Adaptive Teaching & Scaffolding | SEND-21 to SEND-30 | Flexible teaching, modelling, scaffolding and gradual independence |
+| Communication, Language & Interaction | SEND-31 to SEND-40 | Communication access, receptive/expressive language and interaction |
+| Cognition, Learning & Executive Function | SEND-41 to SEND-50 | Memory, attention, organisation, processing and learning strategies |
+| Sensory, Physical & Access Needs | SEND-51 to SEND-60 | Sensory access, physical access, environment and participation |
+| Neurodiversity, Regulation & Classroom Participation | SEND-61 to SEND-70 | Neurodiversity-aware practice, regulation, participation and predictability |
+| Assessment, Progress & Intervention | SEND-71 to SEND-80 | Assessment, progress evidence, intervention and review |
+| Resources, Technology & Accessibility | SEND-81 to SEND-90 | Accessible resources, assistive technology and digital learning |
+| Partnership, Inclusion & Implementation | SEND-91 to SEND-100 | Pupil voice, families, staff collaboration and whole-school implementation |
 
 **Total: 10 families × 10 workflows = 100 workflows.**
 
