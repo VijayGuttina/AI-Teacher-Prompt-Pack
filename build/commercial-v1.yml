@@ -1,0 +1,129 @@
+version: 1.0.0
+product: AI Prompt Toolkit for Primary Teachers
+edition: Commercial V1
+price:
+  regular_gbp: 24.99
+  launch_gbp: 19.99
+
+target:
+  prompts: 120
+  pages_min: 180
+  pages_max: 220
+
+source_policy:
+  reuse_verified_workflows: true
+  create_new_master_workflows_to_hit_count: false
+  assessment_expansion_paused: true
+  final_execution_qa_required: true
+
+parts:
+  - id: plan
+    title: Plan
+    target: 24
+    sources:
+      - path: books/primary-teacher/003-planning.md
+        selector: prompt_ids
+        ids: PT-GEN-001..PT-GEN-024
+      - path: books/primary-teacher/002-general-teaching
+        selector: strongest_planning_workflows
+
+  - id: teach
+    title: Teach
+    target: 22
+    sources:
+      - path: books/primary-teacher/003-planning.md
+        selector: prompt_ids
+        ids: PT-GEN-025..PT-GEN-032
+      - path: books/primary-teacher/004-english/reading.md
+        selector: workflow_ids
+        ids: ENG-R-03,ENG-R-04,ENG-R-05,ENG-R-06,ENG-R-07,ENG-R-08
+      - path: books/primary-teacher/005-mathematics
+        selector: strongest_explanation_modelling_reasoning
+      - path: books/primary-teacher/006-science
+        selector: strongest_explanation_enquiry_misconception
+
+  - id: assess
+    title: Assess
+    target: 18
+    sources:
+      - path: books/primary-teacher/018-assessment/assessment-planning-curriculum-alignment.md
+        selector: workflow_ids
+        ids: AS-01..AS-10
+      - path: books/primary-teacher/018-assessment/formative-assessment-checking-understanding.md
+        selector: workflow_ids
+        ids: AS-11..AS-20
+    selection_rule: select_best_18_after_editorial_review
+
+  - id: adapt
+    title: Adapt
+    target: 16
+    sources:
+      - path: books/primary-teacher/017-send
+        selector: strongest_mainstream_adaptation_workflows
+      - path: books/primary-teacher/002-general-teaching
+        selector: strongest_scaffolding_and_differentiation_workflows
+      - path: books/primary-teacher/004-english
+        selector: strongest_accessible_reading_and_writing_workflows
+      - path: books/primary-teacher/005-mathematics
+        selector: strongest_adaptive_teaching_workflows
+
+  - id: subject-toolkit
+    title: Subject Toolkit
+    target: 30
+    allocation:
+      english: 4
+      mathematics: 5
+      science: 4
+      history: 2
+      geography: 2
+      computing: 2
+      art-design: 2
+      design-technology: 2
+      physical-education: 2
+      music: 2
+      religious-education: 1
+      pshe: 1
+      modern-foreign-languages: 1
+    selection_rule: strongest_distinct_subject_specific_workflows_from_verified_modules
+
+  - id: save-time
+    title: Save Time
+    target: 10
+    sources:
+      - path: books/primary-teacher/003-planning.md
+        selector: strongest_resource_transformation_and_reuse_workflows
+      - path: books/primary-teacher/002-general-teaching
+        selector: strongest_workload_saving_workflows
+      - path: books/primary-teacher/004-english
+        selector: strongest_resource_repurposing_workflows
+      - path: books/primary-teacher/005-mathematics
+        selector: strongest_resource_repurposing_workflows
+
+commercial_prompt_numbering:
+  prefix: Commercial Prompt
+  start: 1
+  sequential: true
+
+presentation:
+  include_master_metadata: false
+  include:
+    - prompt_number_and_title
+    - best_for
+    - use_when
+    - difficulty
+    - copy_and_paste
+    - example_input
+    - example_output
+    - teacher_tip
+    - related_prompts
+
+qa:
+  uk_english: true
+  no_em_dash: true
+  copyability: true
+  prompt_duplication_review: true
+  curriculum_claim_verification: true
+  safeguarding_review: true
+  privacy_review: true
+  high_stakes_teacher_judgement_review: true
+  page_layout_review: true
