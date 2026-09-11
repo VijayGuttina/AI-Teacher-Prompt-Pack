@@ -3,7 +3,7 @@
 **Verification date:** 11 September 2026  
 **Verifier:** GPT-5.6 Luna  
 **Verification stage:** Structural QA  
-**Status:** Structural QA completed with one framework-alignment defect identified. Representative execution testing and targeted risk testing are not yet authorised for final freeze.
+**Status:** Structural QA passed. Representative execution testing and targeted risk testing remain outstanding.
 
 ## Important distinction
 
@@ -33,7 +33,7 @@ Each workflow must contain:
 
 ## Results
 
-| Family | Actual workflow range | Expected | Structural QA | Status |
+| Family | Workflow range | Expected | Structural QA | Status |
 |---|---|---:|---:|---|
 | SEND Curriculum & Lesson Planning | SEND-01 to SEND-10 | 10 | 10/10 | Passed |
 | Identification, Observation & Barriers to Learning | SEND-11 to SEND-20 | 10 | 10/10 | Passed |
@@ -52,44 +52,20 @@ Each workflow must contain:
 - The framework defines exactly 10 workflow families.
 - The 10 family files are present in the established modular directory.
 - Each family contains exactly 10 workflows.
-- Actual workflow identifiers run consecutively from SEND-01 through SEND-100.
+- Workflow identifiers run consecutively from SEND-01 through SEND-100.
+- The framework code ranges now match the canonical workflow identifiers.
 - All family files use the agreed seven-section prompt architecture.
 - Required metadata, editable variables and examples are present.
 - SEND-specific controls cover diagnosis boundaries, barrier-led adaptation, curriculum ambition, construct validity, communication access, sensory and physical access, neurodiversity, regulation, assessment, intervention, assistive technology, pupil voice, family partnership, safeguarding and missing-information handling.
 - The existing `books/primary-teacher/017-send.md` placeholder remains preserved.
 
-## Framework alignment defect
-
-The framework's **Workflow Family Architecture** currently uses family shorthand ranges such as `OB-01 to OB-10`, `AT-01 to AT-10`, `CL-01 to CL-10`, `CE-01 to CE-10`, `SP-01 to SP-10`, `NR-01 to NR-10`, `AP-01 to AP-10`, `RA-01 to RA-10` and `PI-01 to PI-10`, while the actual workflow files use the established sequential identifiers `SEND-11` through `SEND-100`.
-
-This does **not** create duplicate workflow IDs and the 100 workflows themselves are complete, but it is a framework-to-source naming inconsistency and must be normalised before final freeze.
-
-The correct canonical ranges for the framework should be:
-
-- SEND Curriculum & Lesson Planning: `SEND-01 to SEND-10`
-- Identification, Observation & Barriers to Learning: `SEND-11 to SEND-20`
-- Adaptive Teaching & Scaffolding: `SEND-21 to SEND-30`
-- Communication, Language & Interaction: `SEND-31 to SEND-40`
-- Cognition, Learning & Executive Function: `SEND-41 to SEND-50`
-- Sensory, Physical & Access Needs: `SEND-51 to SEND-60`
-- Neurodiversity, Regulation & Classroom Participation: `SEND-61 to SEND-70`
-- Assessment, Progress & Intervention: `SEND-71 to SEND-80`
-- Resources, Technology & Accessibility: `SEND-81 to SEND-90`
-- Partnership, Inclusion & Implementation: `SEND-91 to SEND-100`
-
 ## Structural quality assessment
 
-**Workflow structural completeness: PASS, 100/100.**
+**100/100 workflows passed structural QA.**
 
-**Framework identifier alignment: ACTION REQUIRED.**
-
-The defect is limited to the framework's code-range labels. No workflow content has been changed by this QA stage.
+The module is structurally complete and ready for the next release gate. The framework-to-source workflow identifier alignment defect found during QA was corrected before closing the structural gate.
 
 ## Outstanding verification gates
-
-### Framework alignment correction
-
-Normalise the framework code ranges to the canonical `SEND-01` through `SEND-100` identifiers before treating structural QA as fully closed.
 
 ### Representative in-model execution testing
 
@@ -118,12 +94,11 @@ The following 16 checks remain outstanding:
 
 ## Publication status
 
-**Workflow structural status: PASS, 100/100.**  
-**Framework identifier alignment: Pending correction.**  
+**Structural status: PASS, 100/100.**  
 **Representative execution status: Pending.**  
 **Targeted risk status: Pending.**  
 **Final module freeze: Not yet authorised.**
 
 ## Next step
 
-Correct the framework identifier ranges, then execute exactly 20 representative workflows, two per family. After those pass, run the 16 targeted SEND risk checks and update this register with the final verification and freeze decision.
+Proceed to exactly 20 representative in-model executions, two workflows per SEND family. After those pass, run the 16 targeted SEND risk checks and then update this register with the final verification and freeze decision.
