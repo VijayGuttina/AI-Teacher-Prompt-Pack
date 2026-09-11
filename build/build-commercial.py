@@ -18,7 +18,7 @@ PARTS = [
     "999-index.md",
 ]
 
-PAGE_BREAK = "<!-- PAGEBREAK -->"
+PAGE_BREAK = "::: { .pagebreak }\n:::"
 
 
 def strip_yaml_front_matter(text: str) -> str:
