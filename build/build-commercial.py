@@ -18,16 +18,18 @@ PARTS = [
     "999-index.md",
 ]
 
+PAGE_BREAK = "<!-- PAGEBREAK -->"
+
 
 def strip_yaml_front_matter(text: str) -> str:
     if text.startswith("---"):
         end = text.find("\n---", 3)
         if end != -1:
-            return text[end + 4:].lstrip()
+            return text[end + 4 :].lstrip()
     return text
 
 
-def main() -> None:
+def load_sections() -> list[str]:
     missing = [name for name in PARTS if not (SOURCE / name).exists()]
     if missing:
         raise SystemExit("Missing commercial source files: " + ", ".join(missing))
@@ -38,9 +40,16 @@ def main() -> None:
         if name != "000-front-matter.md":
             text = strip_yaml_front_matter(text)
         sections.append(text.rstrip())
+    return sections
 
+
+def main() -> None:
+    sections = load_sections()
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text("\n\n\\newpage\n\n".join(sections) + "\n", encoding="utf-8")
+    OUTPUT.write_text(
+        f"\n\n{PAGE_BREAK}\n\n".join(sections) + "\n",
+        encoding="utf-8",
+    )
     print(f"Built {OUTPUT}")
 
 
