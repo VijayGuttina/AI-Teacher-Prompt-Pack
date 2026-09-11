@@ -11,7 +11,7 @@ Install locally:
 - Python 3.10+
 - Pandoc
 - XeLaTeX, normally via TeX Live or MiKTeX
-- Python package `python-docx` if you create or update the reference DOCX
+- Python package `python-docx`
 
 Windows users can use PowerShell. Pandoc and MiKTeX are suitable choices for the publication workflow.
 
@@ -26,6 +26,42 @@ python build/qa-commercial.py
 ```
 
 The first QA pass validates the source library. The build assembles the commercial Markdown. The second QA pass validates the assembled publication.
+
+## Create the reference DOCX
+
+The reference DOCX is formatting only. It does not contain the commercial prompt library.
+
+Run:
+
+```powershell
+python build/create-commercial-reference.py
+```
+
+This creates:
+
+```text
+build/commercial-reference.docx
+```
+
+It controls the publication styling used by Pandoc, including:
+
+- A4 portrait page size
+- 2 cm top/bottom margins
+- 2.5 cm left margin
+- 2 cm right margin
+- Aptos typography
+- 11 pt body text
+- Heading 1 at 18 pt bold
+- Heading 2 at 16 pt bold
+- Heading 3 at 14 pt bold
+- 1.15 line spacing
+- 6 pt paragraph spacing
+- page numbers
+- header/footer treatment
+- hyperlink styling
+- readable prompt blocks
+
+If the visual design changes, update the generator and recreate the reference DOCX rather than editing the generated reference file manually.
 
 ## Generate DOCX
 
@@ -62,29 +98,6 @@ pandoc exports/markdown/AI-Prompt-Toolkit-for-Primary-Teachers-v1.0.md `
 ## Why the page-break filter exists
 
 The commercial Markdown uses a neutral Pandoc `pagebreak` block between major parts. `build/pagebreak.lua` converts it to a real page break for both DOCX and PDF. This avoids putting raw LaTeX page-break commands into the master Markdown.
-
-## Reference DOCX
-
-`commercial-reference.docx` is the visual template. It should control:
-
-- A4 portrait page size
-- 2 cm top/bottom margins
-- 2.5 cm left margin
-- 2 cm right margin
-- Aptos, Calibri or Source Sans Pro typography
-- 11 pt body text
-- Heading 1 at 18 pt bold
-- Heading 2 at 16 pt bold
-- Heading 3 at 14 pt bold
-- 1.15 line spacing
-- 6 pt paragraph spacing
-- page numbers
-- header/footer treatment
-- table styling
-- hyperlink styling
-- readable prompt blocks
-
-Do not put prompt content into the reference DOCX. It is formatting only.
 
 ## QA checks
 
