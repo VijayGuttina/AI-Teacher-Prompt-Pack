@@ -21,8 +21,7 @@ PARTS = [
     "999-index.md",
 ]
 
-PROMPT_RE = re.compile(r"^## Commercial Prompt (\d+):\\s*(.+)$", re.MULTILINE)
-PLACEHOLDER_RE = re.compile(r"\[[A-Z][A-Z0-9_ /&-]{2,}\]")
+PROMPT_RE = re.compile(r"^## Commercial Prompt (\d+):\s*(.+)$", re.MULTILINE)
 
 
 def fail(message: str) -> None:
