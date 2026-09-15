@@ -5,7 +5,7 @@
 - [ ] Run `python build/build-commercial.py`
 - [ ] Create `build/commercial-reference.docx`
 - [ ] Generate the DOCX
-- [ ] Generate the PDF
+- [ ] Generate the PDF using `build/commercial-pdf-header.tex`
 
 ## Automated QA
 - [ ] 127 prompts present
@@ -20,7 +20,11 @@
 - [ ] TOC is correct
 - [ ] Major sections start on new pages
 - [ ] Prompt headings stay with their content
-- [ ] Prompt blocks wrap correctly
+- [ ] Prompt blocks wrap correctly within the A4 text area
+- [ ] Long copy-and-paste lines do not run into the page margin
+- [ ] No clipped text or overfull boxes
+- [ ] Commercial labels such as **Best for**, **Use when**, **Difficulty**, **Copy and paste**, **Example input**, **Example output**, **Teacher tip** and **Related prompts** appear bold
+- [ ] Bold hierarchy is consistent and not excessive
 - [ ] No blank pages
 - [ ] No orphaned headings
 - [ ] Page numbers appear correctly

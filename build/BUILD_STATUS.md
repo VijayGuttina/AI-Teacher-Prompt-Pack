@@ -9,8 +9,15 @@ Updated after the publication-pipeline pass.
 - Automated QA: `build/qa-commercial.py`
 - Page-break filter: `build/pagebreak.lua`
 - Reference DOCX generator: `build/create-commercial-reference.py`
+- PDF layout header: `build/commercial-pdf-header.tex`
 - Publication checklist: `build/publication-checklist.md`
 - Generated release binaries are intentionally not committed until the local publication build and visual QA have been completed.
+
+## Publication formatting fixes
+
+The PDF build now uses `build/commercial-pdf-header.tex` to enable line wrapping for long fenced prompt blocks. This prevents long copy-and-paste instructions from running into the A4 page margin or being clipped by the PDF layout.
+
+Commercial prompt labels remain explicitly bold in the Markdown source, including **Best for**, **Use when**, **Difficulty**, **Copy and paste**, **Example input**, **Example output**, **Teacher tip** and **Related prompts**. This preserves the intended scanning hierarchy across DOCX and PDF.
 
 ## Next execution step
 

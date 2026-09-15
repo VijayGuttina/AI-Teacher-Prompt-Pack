@@ -61,6 +61,8 @@ It controls the publication styling used by Pandoc, including:
 - hyperlink styling
 - readable prompt blocks
 
+The commercial Markdown already uses bold labels such as **Best for**, **Use when**, **Difficulty**, **Copy and paste**, **Example input**, **Example output**, **Teacher tip** and **Related prompts**. Keep these labels bold in the source so the same hierarchy is preserved in DOCX and PDF.
+
 If the visual design changes, update the generator and recreate the reference DOCX rather than editing the generated reference file manually.
 
 ## Generate DOCX
@@ -80,6 +82,8 @@ pandoc exports/markdown/AI-Prompt-Toolkit-for-Primary-Teachers-v1.0.md `
 
 ## Generate PDF
 
+The PDF uses an additional XeLaTeX header because fenced prompt blocks can contain long instruction lines. The header enables safe line wrapping inside the A4 text area and reduces overfull boxes and clipped text.
+
 ```powershell
 pandoc exports/markdown/AI-Prompt-Toolkit-for-Primary-Teachers-v1.0.md `
   --from markdown `
@@ -87,6 +91,7 @@ pandoc exports/markdown/AI-Prompt-Toolkit-for-Primary-Teachers-v1.0.md `
   --toc `
   --number-sections `
   --lua-filter=build/pagebreak.lua `
+  -H build/commercial-pdf-header.tex `
   -V geometry:a4paper `
   -V geometry:top=20mm `
   -V geometry:bottom=20mm `
@@ -94,6 +99,8 @@ pandoc exports/markdown/AI-Prompt-Toolkit-for-Primary-Teachers-v1.0.md `
   -V geometry:right=20mm `
   -o exports/pdf/AI-Prompt-Toolkit-for-Primary-Teachers-v1.0.pdf
 ```
+
+Do not generate the PDF without `-H build/commercial-pdf-header.tex` because long copy-and-paste prompt lines may run beyond the text area.
 
 ## Why the page-break filter exists
 
