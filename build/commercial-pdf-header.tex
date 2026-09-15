@@ -13,10 +13,20 @@
 \usepackage{fvextra}
 \usepackage{needspace}
 
-% Use the standard TeX font stack supplied by MiKTeX.
-% Do not depend on Windows fonts or TeX Gyre font files being installed.
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
+% XeLaTeX/LuaLaTeX Unicode-safe font handling.
+% Do not use fontenc here. With XeLaTeX it can cause Unicode characters
+% such as curly apostrophes to fall back to EC fonts and produce warnings.
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}
+\setsansfont{Latin Modern Sans}
+\setmonofont{Latin Modern Mono}
+
+% Latin Modern does not provide every Unicode symbol used in the source.
+% Map the small set of symbols used by the book to stable TeX equivalents.
+\usepackage{newunicodechar}
+\newunicodechar{↪}{\ensuremath{\hookrightarrow}}
+\newunicodechar{→}{\ensuremath{\rightarrow}}
+\newunicodechar{⌋}{\ensuremath{\rfloor}}
 
 % Give ordinary paragraphs enough flexibility to wrap cleanly inside the
 % text area. This is important for normal prose as well as prompt blocks.
