@@ -111,7 +111,7 @@ def main() -> None:
     lua = PAGEBREAK_LUA.read_text(encoding="utf-8")
     if 'text == "Copy and paste:"' not in lua:
         fail("layout filter does not explicitly handle the Copy and paste label")
-    if "latex_prompt_box" not in lua or "\\\\fbox" not in lua:
+    if "latex_prompt_box" not in lua or "\\begin{framed}" not in lua:
         fail("layout filter does not contain the PDF prompt container")
     if 'prompt_table(el.text)' not in lua:
         fail("layout filter no longer contains the DOCX prompt container")
