@@ -71,15 +71,61 @@ local function prompt_table(text)
     .. '</w:tc></w:tr></w:tbl>'
 end
 
-function Para(el)
-  if FORMAT:match("docx") then
-    local text = pandoc.utils.stringify(el)
-    if text == "Copy and paste:" then
-      return pandoc.RawBlock("openxml",
-        '<w:p><w:pPr><w:pStyle w:val="Label"/><w:keepNext/></w:pPr>'
-        .. '<w:r><w:rPr><w:b/></w:rPr><w:t>Copy and paste:</w:t></w:r></w:p>')
+local function latex_escape(s)
+  s = s:gsub("\\", "\\textbackslash{}"):gsub("([%%#$&_{}])", "\\%1")
+  s = s:gsub("~", "\\textasciitilde{}")
+  s = s:gsub("%^", "\\textasciicircum{}")
+  return s
+end
+
+local function latex_prompt_box(text)
+  local section_headers = {
+    ROLE = true,
+    CONTEXT = true,
+    TASK = true,
+    REQUIREMENTS = true,
+    ["OUTPUT FORMAT"] = true,
+    ["QUALITY CHECKS"] = true,
+    ["OPTIONAL CUSTOMISATION"] = true,
+  }
+
+  local lines = {}
+  for line in (text .. "\n"):gmatch("(.-)\n") do
+    local trimmed = line:gsub("^%s+", ""):gsub("%s+$", "")
+    local escaped = latex_escape(line)
+    if section_headers[trimmed] then
+      table.insert(lines, "{\\bfseries " .. escaped .. "}\\par")
+    elseif trimmed == "" then
+      table.insert(lines, "\\vspace{0.25em}")
+    else
+      table.insert(lines, escaped .. "\\par")
     end
   end
+
+  return "\\noindent\\fbox{\\begin{minipage}{0.96\\linewidth}"
+    .. "\\setlength{\\parindent}{0pt}"
+    .. "\\setlength{\\parskip}{0.2em}"
+    .. "\\small\\ttfamily\n"
+    .. table.concat(lines, "\n")
+    .. "\\end{minipage}}"
+end
+
+function Para(el)
+  local text = pandoc.utils.stringify(el):gsub("^%s+", ""):gsub("%s+$", "")
+
+  if FORMAT:match("docx") and text == "Copy and paste:" then
+    return pandoc.RawBlock("openxml",
+      '<w:p><w:pPr><w:pStyle w:val="Label"/><w:keepNext/><w:spacing w:after="80"/></w:pPr>'
+      .. '<w:r><w:rPr><w:b/></w:rPr><w:t>Copy and paste:</w:t></w:r></w:p>')
+  end
+
+  if FORMAT:match("latex") or FORMAT:match("pdf") then
+    if text == "Copy and paste:" then
+      return pandoc.RawBlock("latex",
+        "\\needspace{3\\baselineskip}\\noindent\\textbf{Copy and paste:}\\par\\smallskip\\nopagebreak[4]")
+    end
+  end
+
   return nil
 end
 
@@ -87,6 +133,11 @@ function CodeBlock(el)
   if FORMAT:match("docx") then
     return pandoc.RawBlock("openxml", prompt_table(el.text))
   end
+
+  if FORMAT:match("latex") or FORMAT:match("pdf") then
+    return pandoc.RawBlock("latex", latex_prompt_box(el.text))
+  end
+
   return nil
 end
 
