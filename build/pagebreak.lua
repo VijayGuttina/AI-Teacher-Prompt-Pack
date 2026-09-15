@@ -50,16 +50,16 @@ local function prompt_table(text)
     .. '<w:tblPr>'
     .. '<w:tblW w:w="0" w:type="auto"/>'
     .. '<w:tblBorders>'
-    .. '<w:top w:val="single" w:sz="6" w:space="0" w:color="D9E1E6"/>'
-    .. '<w:left w:val="single" w:sz="6" w:space="0" w:color="D9E1E6"/>'
-    .. '<w:bottom w:val="single" w:sz="6" w:space="0" w:color="D9E1E6"/>'
-    .. '<w:right w:val="single" w:sz="6" w:space="0" w:color="D9E1E6"/>'
+    .. '<w:top w:val="single" w:sz="6" w:space="0" w:color="72B7B8"/>'
+    .. '<w:left w:val="single" w:sz="6" w:space="0" w:color="72B7B8"/>'
+    .. '<w:bottom w:val="single" w:sz="6" w:space="0" w:color="72B7B8"/>'
+    .. '<w:right w:val="single" w:sz="6" w:space="0" w:color="72B7B8"/>'
     .. '<w:insideH w:val="nil"/>'
     .. '<w:insideV w:val="nil"/>'
     .. '</w:tblBorders>'
     .. '</w:tblPr>'
     .. '<w:tr><w:tc>'
-    .. '<w:tcPr><w:shd w:fill="F3F6F8"/><w:tcMar>'
+    .. '<w:tcPr><w:shd w:fill="F2F8F8"/><w:tcMar>'
     .. '<w:top w:w="120" w:type="dxa"/><w:start w:w="120" w:type="dxa"/>'
     .. '<w:bottom w:w="120" w:type="dxa"/><w:end w:w="120" w:type="dxa"/>'
     .. '</w:tcMar></w:tcPr>'
@@ -99,12 +99,12 @@ local function latex_prompt_box(text)
     end
   end
 
-  return "\\begin{framed}"
+  return "\\begin{shaded}"
     .. "\\setlength{\\parindent}{0pt}"
     .. "\\setlength{\\parskip}{0.2em}"
     .. "\\small\\ttfamily\n"
     .. table.concat(lines, "\n")
-    .. "\\end{framed}"
+    .. "\\end{shaded}"
 end
 
 function Para(el)
