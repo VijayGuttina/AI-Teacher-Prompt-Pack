@@ -1,0 +1,26 @@
+% PDF layout controls for the Commercial V1 publication.
+% Keep the Markdown source unchanged. This file exists to make long
+% copy-and-paste prompt blocks wrap safely inside the A4 text area.
+
+\usepackage{fvextra}
+
+% Pandoc uses the Highlighting verbatim environment for fenced code blocks.
+% Allow long prompt lines to wrap instead of running into the page margin.
+\RecustomVerbatimEnvironment{Highlighting}{Verbatim}{
+  breaklines=true,
+  breakanywhere=true,
+  fontsize=\small,
+  commandchars=\\\{\}
+}
+
+% Also protect ordinary verbatim blocks if Pandoc emits them.
+\RecustomVerbatimEnvironment{Verbatim}{Verbatim}{
+  breaklines=true,
+  breakanywhere=true,
+  fontsize=\small
+}
+
+% Give normal paragraphs a little additional flexibility before TeX resorts
+% to overfull boxes.
+\setlength{\emergencystretch}{3em}
+\sloppy
