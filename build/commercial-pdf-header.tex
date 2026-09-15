@@ -6,6 +6,10 @@
 \geometry{a4paper,top=18mm,bottom=18mm,left=20mm,right=20mm,headheight=10mm,headsep=6mm,footskip=10mm}
 
 \usepackage{microtype}
+% Do not protrude glyphs into the margin. This prevents apparent clipping at
+% the right edge in some PDF viewers and print pipelines.
+\microtypesetup{protrusion=false,expansion=false}
+
 \usepackage{fvextra}
 \usepackage{needspace}
 
@@ -20,7 +24,10 @@
 \setlength{\emergencystretch}{4em}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.35em}
+\tolerance=9999
+\pretolerance=1000
 \sloppy
+\raggedbottom
 
 % Long copy-and-paste blocks must wrap instead of creating overfull boxes.
 \RecustomVerbatimEnvironment{Highlighting}{Verbatim}{
