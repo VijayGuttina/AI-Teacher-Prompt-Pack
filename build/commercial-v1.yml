@@ -1,5 +1,6 @@
 version: 1.0.0
 product: AI Prompt Toolkit for Primary Teachers
+author: Vijay Guttina
 edition: Commercial V1
 price:
   regular_gbp: 24.99
@@ -9,6 +10,14 @@ target:
   prompts: 120
   pages_min: 180
   pages_max: 220
+
+model_compatibility:
+  approach: frontier-model-agnostic
+  examples:
+    - ChatGPT
+    - Claude
+    - Gemini
+  provider_specific_syntax: false
 
 source_policy:
   reuse_verified_workflows: true
@@ -111,11 +120,15 @@ presentation:
     - best_for
     - use_when
     - difficulty
+    - example_values
     - copy_and_paste
     - example_input
     - example_output
     - teacher_tip
     - related_prompts
+  example_values:
+    generated_for_every_editable_variable: true
+    replace_before_use: true
 
 qa:
   uk_english: true
@@ -126,4 +139,6 @@ qa:
   safeguarding_review: true
   privacy_review: true
   high_stakes_teacher_judgement_review: true
+  example_values_review: true
+  model_agnostic_review: true
   page_layout_review: true
