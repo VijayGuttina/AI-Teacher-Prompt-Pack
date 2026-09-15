@@ -14,9 +14,39 @@ def set_font(style, name="Aptos", size=11, bold=False, colour=None):
     style.font.name = name
     style.font.size = Pt(size)
     style.font.bold = bold
-    style._element.rPr.rFonts.set(qn("w:eastAsia"), name)
+    rpr = style._element.get_or_add_rPr()
+    rfonts = rpr.rFonts
+    if rfonts is None:
+        rfonts = OxmlElement("w:rFonts")
+        rpr.insert(0, rfonts)
+    rfonts.set(qn("w:ascii"), name)
+    rfonts.set(qn("w:hAnsi"), name)
+    rfonts.set(qn("w:eastAsia"), name)
+    rfonts.set(qn("w:cs"), name)
+    lang = rpr.find(qn("w:lang"))
+    if lang is None:
+        lang = OxmlElement("w:lang")
+        rpr.append(lang)
+    lang.set(qn("w:val"), "en-GB")
+    lang.set(qn("w:eastAsia"), "en-GB")
+    lang.set(qn("w:bidi"), "en-GB")
     if colour:
         style.font.color.rgb = RGBColor(*colour)
+
+
+def add_paragraph_no_hyphenation(style):
+    ppr = style._element.get_or_add_pPr()
+    suppress = ppr.find(qn("w:suppressAutoHyphens"))
+    if suppress is None:
+        ppr.append(OxmlElement("w:suppressAutoHyphens"))
+
+    # Explicitly prevent Word from breaking Latin words at arbitrary
+    # character boundaries when a line is tight.
+    word_wrap = ppr.find(qn("w:wordWrap"))
+    if word_wrap is None:
+        word_wrap = OxmlElement("w:wordWrap")
+        ppr.append(word_wrap)
+    word_wrap.set(qn("w:val"), "false")
 
 
 def add_field(paragraph, instruction):
@@ -25,9 +55,34 @@ def add_field(paragraph, instruction):
     paragraph._p.append(field)
 
 
+def configure_document_settings(doc):
+    settings = doc.settings._element
+
+    auto_hyphenation = settings.find(qn("w:autoHyphenation"))
+    if auto_hyphenation is None:
+        auto_hyphenation = OxmlElement("w:autoHyphenation")
+        settings.append(auto_hyphenation)
+    auto_hyphenation.set(qn("w:val"), "false")
+
+    no_caps_hyphenation = settings.find(qn("w:doNotHyphenateCaps"))
+    if no_caps_hyphenation is None:
+        no_caps_hyphenation = OxmlElement("w:doNotHyphenateCaps")
+        settings.append(no_caps_hyphenation)
+    no_caps_hyphenation.set(qn("w:val"), "true")
+
+    # Do not allow Word to compress characters to force lines into a box.
+    spacing_control = settings.find(qn("w:characterSpacingControl"))
+    if spacing_control is None:
+        spacing_control = OxmlElement("w:characterSpacingControl")
+        settings.append(spacing_control)
+    spacing_control.set(qn("w:val"), "dontCompress")
+
+
 def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     doc = Document()
+    configure_document_settings(doc)
+
     section = doc.sections[0]
     section.page_width = Mm(210)
     section.page_height = Mm(297)
@@ -43,6 +98,7 @@ def main():
     set_font(normal, size=11)
     normal.paragraph_format.space_after = Pt(6)
     normal.paragraph_format.line_spacing = 1.15
+    add_paragraph_no_hyphenation(normal)
 
     for name, size in [("Title", 28), ("Subtitle", 15), ("Heading 1", 18), ("Heading 2", 16), ("Heading 3", 14)]:
         style = styles[name]
@@ -50,20 +106,26 @@ def main():
         style.paragraph_format.space_before = Pt(12 if name != "Title" else 0)
         style.paragraph_format.space_after = Pt(6)
         style.paragraph_format.keep_with_next = True
+        add_paragraph_no_hyphenation(style)
 
     custom = {
-        "Prompt Number": (13, True),
-        "Prompt Title": (15, True),
-        "Label": (10, True),
-        "Prompt Text": (10.5, False),
-        "Teacher Tip": (10.5, False),
+        "Prompt Number": (13, True, "Aptos"),
+        "Prompt Title": (15, True, "Aptos"),
+        "Label": (10, True, "Aptos"),
+        "Prompt Text": (10.5, False, "Aptos"),
+        "Teacher Tip": (10.5, False, "Aptos"),
+        # Pandoc uses this style for fenced code blocks. Defining it here
+        # prevents the default code style from introducing unwanted word
+        # breaking or cramped line boxes.
+        "Source Code": (9.5, False, "Consolas"),
     }
-    for name, (size, bold) in custom.items():
+    for name, (size, bold, font_name) in custom.items():
         style = styles[name] if name in styles else styles.add_style(name, WD_STYLE_TYPE.PARAGRAPH)
         style.base_style = styles["Normal"]
-        set_font(style, size=size, bold=bold)
+        set_font(style, name=font_name, size=size, bold=bold)
         style.paragraph_format.space_after = Pt(5)
-        style.paragraph_format.line_spacing = 1.1
+        style.paragraph_format.line_spacing = 1.05
+        add_paragraph_no_hyphenation(style)
 
     header = section.header.paragraphs[0]
     header.text = "AI Prompt Toolkit for Primary Teachers"
