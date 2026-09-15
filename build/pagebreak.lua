@@ -72,7 +72,8 @@ local function prompt_table(text)
 end
 
 local function latex_escape(s)
-  s = s:gsub("\\", "\\textbackslash{}"):gsub("([%%#$&_{}])", "\\%1")
+  s = s:gsub("\\", "\\textbackslash{}")
+  s = s:gsub("([%%#$&_{}])", "\\%1")
   s = s:gsub("~", "\\textasciitilde{}")
   s = s:gsub("%^", "\\textasciicircum{}")
   return s
@@ -102,12 +103,14 @@ local function latex_prompt_box(text)
     end
   end
 
-  return "\\noindent\\fbox{\\begin{minipage}{0.96\\linewidth}"
+  -- framed is page-break safe, unlike a single fbox/minipage. This keeps the
+  -- prompt visibly contained even when a long prompt crosses a page boundary.
+  return "\\begin{framed}"
     .. "\\setlength{\\parindent}{0pt}"
     .. "\\setlength{\\parskip}{0.2em}"
     .. "\\small\\ttfamily\n"
     .. table.concat(lines, "\n")
-    .. "\\end{minipage}}"
+    .. "\\end{framed}"
 end
 
 function Para(el)
