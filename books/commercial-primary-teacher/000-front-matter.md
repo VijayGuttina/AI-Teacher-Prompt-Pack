@@ -14,8 +14,6 @@ format: A4 digital and printable
 
 **120+ ready-to-use AI workflows** for planning, teaching, assessment, adaptation and everyday classroom work.
 
-**Author:** Vijay Guttina
-
 ---
 
 ## Copyright
