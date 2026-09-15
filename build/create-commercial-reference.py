@@ -34,19 +34,19 @@ def set_font(style, name="Aptos", size=11, bold=False, colour=None):
         style.font.color.rgb = RGBColor(*colour)
 
 
-def add_paragraph_no_hyphenation(style):
+def prevent_word_breaking(style):
     ppr = style._element.get_or_add_pPr()
+
+    # Disable automatic hyphenation for this paragraph style.
     suppress = ppr.find(qn("w:suppressAutoHyphens"))
     if suppress is None:
-        ppr.append(OxmlElement("w:suppressAutoHyphens"))
+        suppress = OxmlElement("w:suppressAutoHyphens")
+        ppr.append(suppress)
+    suppress.set(qn("w:val"), "true")
 
-    # Explicitly prevent Word from breaking Latin words at arbitrary
-    # character boundaries when a line is tight.
-    word_wrap = ppr.find(qn("w:wordWrap"))
-    if word_wrap is None:
-        word_wrap = OxmlElement("w:wordWrap")
-        ppr.append(word_wrap)
-    word_wrap.set(qn("w:val"), "false")
+    # Do NOT add w:wordWrap=false here. That setting controls Word's
+    # East-Asian line-breaking behaviour and can cause undesirable character
+    # wrapping in Latin text. Normal Word wrapping should handle whole words.
 
 
 def add_field(paragraph, instruction):
@@ -98,7 +98,7 @@ def main():
     set_font(normal, size=11)
     normal.paragraph_format.space_after = Pt(6)
     normal.paragraph_format.line_spacing = 1.15
-    add_paragraph_no_hyphenation(normal)
+    prevent_word_breaking(normal)
 
     for name, size in [("Title", 28), ("Subtitle", 15), ("Heading 1", 18), ("Heading 2", 16), ("Heading 3", 14)]:
         style = styles[name]
@@ -106,7 +106,7 @@ def main():
         style.paragraph_format.space_before = Pt(12 if name != "Title" else 0)
         style.paragraph_format.space_after = Pt(6)
         style.paragraph_format.keep_with_next = True
-        add_paragraph_no_hyphenation(style)
+        prevent_word_breaking(style)
 
     custom = {
         "Prompt Number": (13, True, "Aptos"),
@@ -114,9 +114,6 @@ def main():
         "Label": (10, True, "Aptos"),
         "Prompt Text": (10.5, False, "Aptos"),
         "Teacher Tip": (10.5, False, "Aptos"),
-        # Pandoc uses this style for fenced code blocks. Defining it here
-        # prevents the default code style from introducing unwanted word
-        # breaking or cramped line boxes.
         "Source Code": (9.5, False, "Consolas"),
     }
     for name, (size, bold, font_name) in custom.items():
@@ -125,7 +122,7 @@ def main():
         set_font(style, name=font_name, size=size, bold=bold)
         style.paragraph_format.space_after = Pt(5)
         style.paragraph_format.line_spacing = 1.05
-        add_paragraph_no_hyphenation(style)
+        prevent_word_breaking(style)
 
     header = section.header.paragraphs[0]
     header.text = "AI Prompt Toolkit for Primary Teachers"
