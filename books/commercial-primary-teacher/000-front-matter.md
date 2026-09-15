@@ -1,6 +1,7 @@
 ---
 title: AI Prompt Toolkit for Primary Teachers
 subtitle: Plan faster. Teach better. Assess smarter. Save hours every week.
+author: Vijay Guttina
 edition: Commercial Edition V1.0
 version: 1.0.0
 status: Commercial production
@@ -9,9 +10,11 @@ format: A4 digital and printable
 
 # AI Prompt Toolkit for Primary Teachers
 
-## The practical ChatGPT toolkit for UK primary teachers
+## The practical AI toolkit for UK primary teachers
 
 **120+ ready-to-use AI workflows** for planning, teaching, assessment, adaptation and everyday classroom work.
+
+**Author:** Vijay Guttina
 
 ---
 
@@ -35,7 +38,7 @@ Do not enter personally identifiable pupil information, confidential school info
 
 ## About this book
 
-This book is a curated commercial edition of a much larger primary-teacher AI workflow library.
+This book is a curated commercial edition of a much larger primary-teacher AI workflow library, created by **Vijay Guttina**.
 
 It focuses on the jobs that repeatedly consume teacher time: planning lessons, developing explanations and activities, checking understanding, creating assessment material, adapting teaching and turning existing resources into something more useful.
 
@@ -62,13 +65,28 @@ The examples are designed around primary teaching in England, while many workflo
 
 1. Find the teacher task you need help with.
 2. Read **Best for** and **Use when**.
-3. Replace the editable variables with your own information.
-4. Copy the prompt exactly as shown.
-5. Paste it into your approved AI assistant.
-6. Review the result against your curriculum, pupils, resources and school expectations.
-7. Adapt the final material before using it with pupils.
+3. Look at the **Example values** shown for the editable variables.
+4. Replace those example values with information from your own lesson, pupils, resources or school context.
+5. Copy the prompt exactly as shown.
+6. Paste it into your approved AI assistant.
+7. Review the result against your curriculum, pupils, resources and school expectations.
+8. Adapt the final material before using it with pupils.
 
-You should not need to rewrite the prompt itself for normal use.
+The example values are there to show you what a useful entry looks like. They are not intended to be copied unchanged unless they happen to match your task.
+
+You should not normally need to rewrite the prompt itself.
+
+---
+
+## Model compatibility
+
+The prompts in this publication are designed to be **frontier-model agnostic**. They use plain-language instructions, explicit context, clear requirements and defined output formats rather than provider-specific prompt syntax.
+
+They are intended to work across capable general-purpose AI assistants, including **ChatGPT, Claude, Gemini and comparable models**.
+
+Results will vary between models and depend on the quality of the information supplied. The prompts are designed to give a strong first-pass result across a range of capable models, but teachers should always review the output for accuracy, curriculum fit, age appropriateness and professional suitability.
+
+No prompt can guarantee identical output across different models.
 
 ---
 
@@ -156,6 +174,7 @@ Workflows for transforming and reusing material you already have.
 
 ## Version information
 
+**Author:** Vijay Guttina  
 **Version:** 1.0.0  
 **Source library:** AI-Teacher-Prompt-Pack  
 **Edition status:** Commercial production
