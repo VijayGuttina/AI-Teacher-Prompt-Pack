@@ -41,15 +41,11 @@ local function prompt_table(text)
   for line in (text .. "\n"):gmatch("(.-)\n") do
     local trimmed = line:gsub("^%s+", ""):gsub("%s+$", "")
     local keep_next = section_headers[trimmed] == true
-    local bold = keep_next
-    table.insert(paragraphs, raw_paragraph(line, keep_next, bold))
+    table.insert(paragraphs, raw_paragraph(line, keep_next, keep_next))
   end
 
   local body = table.concat(paragraphs)
 
-  -- A one-cell table provides a clear copy-only boundary in Word. The prompt
-  -- text is the only content in the cell, so Teacher Tip and Related prompts
-  -- remain outside the copyable container.
   return '<w:tbl>'
     .. '<w:tblPr>'
     .. '<w:tblW w:w="0" w:type="auto"/>'
@@ -103,8 +99,6 @@ local function latex_prompt_box(text)
     end
   end
 
-  -- framed is page-break safe, unlike a single fbox/minipage. This keeps the
-  -- prompt visibly contained even when a long prompt crosses a page boundary.
   return "\\begin{framed}"
     .. "\\setlength{\\parindent}{0pt}"
     .. "\\setlength{\\parskip}{0.2em}"
@@ -116,14 +110,18 @@ end
 function Para(el)
   local text = pandoc.utils.stringify(el):gsub("^%s+", ""):gsub("%s+$", "")
 
-  if FORMAT:match("docx") and text == "Copy and paste:" then
-    return pandoc.RawBlock("openxml",
-      '<w:p><w:pPr><w:pStyle w:val="Label"/><w:keepNext/><w:spacing w:after="80"/></w:pPr>'
-      .. '<w:r><w:rPr><w:b/></w:rPr><w:t>Copy and paste:</w:t></w:r></w:p>')
-  end
+  if text == "Copy and paste:" then
+    if FORMAT:match("docx") then
+      -- Deliberately return a standalone paragraph. The following prompt is
+      -- a separate raw table, so the label can never become part of it.
+      return pandoc.RawBlock("openxml",
+        '<w:p><w:pPr><w:pStyle w:val="Label"/><w:keepNext/>'
+        .. '<w:spacing w:before="160" w:after="120"/></w:pPr>'
+        .. '<w:r><w:rPr><w:b/><w:sz w:val="22"/></w:rPr><w:t>Copy and paste:</w:t></w:r></w:p>'
+        .. '<w:p><w:pPr><w:spacing w:after="80"/></w:pPr></w:p>')
+    end
 
-  if FORMAT:match("latex") or FORMAT:match("pdf") then
-    if text == "Copy and paste:" then
+    if FORMAT:match("latex") or FORMAT:match("pdf") then
       return pandoc.RawBlock("latex",
         "\\needspace{3\\baselineskip}\\noindent\\textbf{Copy and paste:}\\par\\smallskip\\nopagebreak[4]")
     end
