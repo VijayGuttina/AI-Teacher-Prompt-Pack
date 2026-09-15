@@ -22,6 +22,7 @@ PARTS = [
 ]
 
 PROMPT_RE = re.compile(r"^## Commercial Prompt (\d+):\s*(.+)$", re.MULTILINE)
+PAGEBREAK_RE = re.compile(r"^:::\s*\{\s*\.pagebreak\s*\}\s*$", re.MULTILINE)
 
 
 def fail(message: str) -> None:
@@ -70,7 +71,7 @@ def main() -> None:
         built_matches = [int(n) for n, _ in PROMPT_RE.findall(built)]
         if built_matches != numbers:
             fail("built Markdown prompt numbering does not match source files")
-        if "<!-- PAGEBREAK -->" not in built:
+        if not PAGEBREAK_RE.search(built):
             fail("built Markdown contains no portable PAGEBREAK markers")
 
     print("Commercial QA passed")
