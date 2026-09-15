@@ -1,7 +1,6 @@
 ---
 title: AI Prompt Toolkit for Primary Teachers
 subtitle: Plan faster. Teach better. Assess smarter. Save hours every week.
-author: Vijay Guttina
 edition: Commercial Edition V1.0
 version: 1.0.0
 status: Commercial production
