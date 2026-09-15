@@ -1,0 +1,37 @@
+% Commercial V1 PDF layout controls.
+% This header is deliberately independent of the DOCX reference template.
+% The PDF is generated directly from the canonical Markdown source.
+
+\usepackage{geometry}
+\geometry{a4paper,top=18mm,bottom=18mm,left=20mm,right=20mm,headheight=10mm,headsep=6mm,footskip=10mm}
+
+\usepackage{microtype}
+\usepackage{fvextra}
+\usepackage{needspace}
+
+% Use a reliable TeX font rather than depending on a Windows font being
+% installed in the local XeLaTeX environment.
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Heros}
+\setsansfont{TeX Gyre Heros}
+
+% Give ordinary paragraphs enough flexibility to wrap cleanly inside the
+% text area. This is important for normal prose as well as prompt blocks.
+\setlength{\emergencystretch}{4em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35em}
+\sloppy
+
+% Long copy-and-paste blocks must wrap instead of creating overfull boxes.
+\RecustomVerbatimEnvironment{Highlighting}{Verbatim}{
+  breaklines=true,
+  breakanywhere=true,
+  fontsize=\small,
+  commandchars=\\\{\}
+}
+
+\RecustomVerbatimEnvironment{Verbatim}{Verbatim}{
+  breaklines=true,
+  breakanywhere=true,
+  fontsize=\small
+}
