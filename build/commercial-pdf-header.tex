@@ -3,25 +3,20 @@
 % The PDF is generated directly from the canonical Markdown source.
 
 \usepackage{geometry}
-% Slightly generous margins deliberately trade a small amount of page density
-% for a reliable printable text area. This is preferable to edge clipping.
+% Conservative A4 margins to keep text safely inside the printable area.
 \geometry{a4paper,top=20mm,bottom=20mm,left=22mm,right=22mm,headheight=10mm,headsep=6mm,footskip=12mm}
 
 \usepackage{microtype}
-% Do not protrude glyphs into the margin. This prevents apparent clipping at
-% the right edge in some PDF viewers and print pipelines.
 \microtypesetup{protrusion=false,expansion=false}
 
-% Allow URLs and other long link-like strings to break cleanly.
 \usepackage{xurl}
 \usepackage{fvextra}
 \usepackage{needspace}
 
-% Use a reliable TeX font rather than depending on a Windows font being
-% installed in the local XeLaTeX environment.
-\usepackage{fontspec}
-\setmainfont{TeX Gyre Heros}
-\setsansfont{TeX Gyre Heros}
+% Use the standard TeX font stack supplied by MiKTeX.
+% Do not depend on Windows fonts or TeX Gyre font files being installed.
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 
 % Give ordinary paragraphs enough flexibility to wrap cleanly inside the
 % text area. This is important for normal prose as well as prompt blocks.
