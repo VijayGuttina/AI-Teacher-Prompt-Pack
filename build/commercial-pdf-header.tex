@@ -3,7 +3,6 @@
 % The PDF is generated directly from the canonical Markdown source.
 
 \usepackage{geometry}
-% Conservative A4 margins to keep text safely inside the printable area.
 \geometry{a4paper,top=20mm,bottom=20mm,left=22mm,right=22mm,headheight=10mm,headsep=6mm,footskip=12mm}
 
 \usepackage{microtype}
@@ -17,22 +16,17 @@
 \FrameSep=6pt
 
 % XeLaTeX/LuaLaTeX Unicode-safe font handling.
-% Do not use fontenc here. With XeLaTeX it can cause Unicode characters
-% such as curly apostrophes to fall back to EC fonts and produce warnings.
 \usepackage{fontspec}
 \setmainfont{Latin Modern Roman}
 \setsansfont{Latin Modern Sans}
 \setmonofont{Latin Modern Mono}
 
-% Latin Modern does not provide every Unicode symbol used in the source.
-% Map the small set of symbols used by the book to stable TeX equivalents.
+% Latin Modern does not provide every Unicode symbol used by the source.
 \usepackage{newunicodechar}
 \newunicodechar{↪}{\ensuremath{\hookrightarrow}}
 \newunicodechar{→}{\ensuremath{\rightarrow}}
 \newunicodechar{⌋}{\ensuremath{\rfloor}}
 
-% Give ordinary paragraphs enough flexibility to wrap cleanly inside the
-% text area. This is important for normal prose as well as prompt blocks.
 \setlength{\emergencystretch}{4em}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.35em}
@@ -41,18 +35,10 @@
 \sloppy
 \raggedbottom
 
-% Long copy-and-paste blocks wrap at normal word boundaries. breakanywhere=true
-% was intentionally removed because fvextra displays a hook arrow at each
-% forced break, which was appearing as "↪" inside every prompt in the PDF.
-\RecustomVerbatimEnvironment{Highlighting}{Verbatim}{
-  breaklines=true,
-  breakanywhere=false,
-  breaksymbolleft={},
-  breaksymbolright={},
-  fontsize=\small,
-  commandchars=\\\{\}
-}
-
+% Keep ordinary verbatim blocks safe at the page edge. Do not redefine a
+% Highlighting environment here: the commercial Lua filter converts prompt
+% CodeBlocks into framed LaTeX before they reach this stage, and some Pandoc
+% versions do not define Highlighting for fvextra's Recustom command.
 \RecustomVerbatimEnvironment{Verbatim}{Verbatim}{
   breaklines=true,
   breakanywhere=false,
