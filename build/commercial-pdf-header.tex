@@ -38,16 +38,22 @@
 \sloppy
 \raggedbottom
 
-% Long copy-and-paste blocks must wrap instead of creating overfull boxes.
+% Long copy-and-paste blocks wrap at normal word boundaries. breakanywhere=true
+% was intentionally removed because fvextra displays a hook arrow at each
+% forced break, which was appearing as "↪" inside every prompt in the PDF.
 \RecustomVerbatimEnvironment{Highlighting}{Verbatim}{
   breaklines=true,
-  breakanywhere=true,
+  breakanywhere=false,
+  breaksymbolleft={},
+  breaksymbolright={},
   fontsize=\small,
   commandchars=\\\{\}
 }
 
 \RecustomVerbatimEnvironment{Verbatim}{Verbatim}{
   breaklines=true,
-  breakanywhere=true,
+  breakanywhere=false,
+  breaksymbolleft={},
+  breaksymbolright={},
   fontsize=\small
 }
