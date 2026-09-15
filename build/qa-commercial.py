@@ -6,6 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "books" / "commercial-primary-teacher"
 BUILD = ROOT / "exports" / "markdown" / "AI-Prompt-Toolkit-for-Primary-Teachers-v1.0.md"
+PAGEBREAK_LUA = ROOT / "build" / "pagebreak.lua"
 
 PARTS = [
     "000-front-matter.md",
@@ -39,6 +40,10 @@ def main() -> None:
     combined = "\n\n".join(
         (SOURCE / name).read_text(encoding="utf-8") for name in PARTS
     )
+
+    front_matter = (SOURCE / "000-front-matter.md").read_text(encoding="utf-8")
+    if re.search(r"(?m)^author:\s*", front_matter):
+        fail("author metadata must not appear in the opening title metadata; keep the author in the body only")
 
     prompt_matches = PROMPT_RE.findall(combined)
     numbers = [int(number) for number, _ in prompt_matches]
@@ -101,6 +106,16 @@ def main() -> None:
         if "ChatGPT, Claude, Gemini" not in built:
             fail("built Markdown is missing the major model compatibility examples")
 
+    if not PAGEBREAK_LUA.exists():
+        fail("build/pagebreak.lua is missing")
+    lua = PAGEBREAK_LUA.read_text(encoding="utf-8")
+    if 'text == "Copy and paste:"' not in lua:
+        fail("layout filter does not explicitly handle the Copy and paste label")
+    if "latex_prompt_box" not in lua or "\\\\fbox" not in lua:
+        fail("layout filter does not contain the PDF prompt container")
+    if 'prompt_table(el.text)' not in lua:
+        fail("layout filter no longer contains the DOCX prompt container")
+
     print("Commercial QA passed")
     print(f"Prompts: {len(numbers)}")
     print(f"Source files: {len(PARTS)}")
@@ -108,6 +123,10 @@ def main() -> None:
         print(f"Built Markdown: {BUILD}")
         print("Example values: validated for every variable used by every commercial prompt")
         print("Model compatibility: frontier-model agnostic")
+    print("Opening author metadata: not rendered")
+    print("Copy and paste label: explicit layout control")
+    print("DOCX prompt container: enabled")
+    print("PDF prompt container: enabled")
 
 
 if __name__ == "__main__":
