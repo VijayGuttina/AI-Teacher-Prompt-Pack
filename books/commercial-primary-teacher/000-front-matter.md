@@ -4,8 +4,6 @@ subtitle: Plan faster. Teach better. Assess smarter. Save hours every week.
 edition: Commercial Edition V1.0
 version: 1.0.0
 status: Commercial production
-price: £24.99
-launch_price: £19.99
 format: A4 digital and printable
 ---
 
@@ -14,10 +12,6 @@ format: A4 digital and printable
 ## The practical ChatGPT toolkit for UK primary teachers
 
 **120+ ready-to-use AI workflows** for planning, teaching, assessment, adaptation and everyday classroom work.
-
-**Regular price: £24.99**
-
-**Launch price: £19.99**
 
 ---
 
@@ -163,7 +157,5 @@ Workflows for transforming and reusing material you already have.
 ## Version information
 
 **Version:** 1.0.0  
-**Commercial price:** £24.99  
-**Launch price:** £19.99  
 **Source library:** AI-Teacher-Prompt-Pack  
 **Edition status:** Commercial production
