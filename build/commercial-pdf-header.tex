@@ -3,13 +3,17 @@
 % The PDF is generated directly from the canonical Markdown source.
 
 \usepackage{geometry}
-\geometry{a4paper,top=18mm,bottom=18mm,left=20mm,right=20mm,headheight=10mm,headsep=6mm,footskip=10mm}
+% Slightly generous margins deliberately trade a small amount of page density
+% for a reliable printable text area. This is preferable to edge clipping.
+\geometry{a4paper,top=20mm,bottom=20mm,left=22mm,right=22mm,headheight=10mm,headsep=6mm,footskip=12mm}
 
 \usepackage{microtype}
 % Do not protrude glyphs into the margin. This prevents apparent clipping at
 % the right edge in some PDF viewers and print pipelines.
 \microtypesetup{protrusion=false,expansion=false}
 
+% Allow URLs and other long link-like strings to break cleanly.
+\usepackage{xurl}
 \usepackage{fvextra}
 \usepackage{needspace}
 
