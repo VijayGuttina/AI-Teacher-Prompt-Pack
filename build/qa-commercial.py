@@ -22,6 +22,8 @@ PARTS = [
 ]
 
 PROMPT_RE = re.compile(r"^## Commercial Prompt (\d+):\s*(.+)$", re.MULTILINE)
+PROMPT_BLOCK_RE = re.compile(r"(?ms)^## Commercial Prompt (\d+):.*?(?=^## Commercial Prompt \d+:|\Z)")
+VARIABLE_RE = re.compile(r"\[([A-Z][A-Z0-9_]+)\]")
 PAGEBREAK_RE = re.compile(r"^:::\s*\{\s*\.pagebreak\s*\}\s*$", re.MULTILINE)
 
 
@@ -74,11 +76,38 @@ def main() -> None:
         if not PAGEBREAK_RE.search(built):
             fail("built Markdown contains no portable PAGEBREAK markers")
 
+        blocks = PROMPT_BLOCK_RE.findall(built)
+        if len(blocks) != len(numbers):
+            fail("built Markdown prompt block count does not match prompt count")
+
+        for number, block in [(int(m.group(1)), m.group(0)) for m in PROMPT_BLOCK_RE.finditer(built)]:
+            variables = set(VARIABLE_RE.findall(block))
+            if variables and "**Example values**" not in block:
+                fail(f"Commercial Prompt {number:03d} has variables but no Example values section")
+            if variables:
+                example_section = block.split("**Example values**", 1)[1].split("**Copy and paste:**", 1)[0]
+                missing_variables = [
+                    f"[{variable}]" for variable in sorted(variables)
+                    if f"`[{variable}]`" not in example_section
+                ]
+                if missing_variables:
+                    fail(
+                        f"Commercial Prompt {number:03d} is missing example values for: "
+                        + ", ".join(missing_variables)
+                    )
+
+        if "frontier-model agnostic" not in built.lower():
+            fail("built Markdown is missing the model compatibility statement")
+        if "ChatGPT, Claude, Gemini" not in built:
+            fail("built Markdown is missing the major model compatibility examples")
+
     print("Commercial QA passed")
     print(f"Prompts: {len(numbers)}")
     print(f"Source files: {len(PARTS)}")
     if BUILD.exists():
         print(f"Built Markdown: {BUILD}")
+        print("Example values: validated for every variable used by every commercial prompt")
+        print("Model compatibility: frontier-model agnostic")
 
 
 if __name__ == "__main__":
