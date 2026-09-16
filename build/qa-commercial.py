@@ -7,6 +7,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "books" / "commercial-primary-teacher"
 BUILD = ROOT / "exports" / "markdown" / "AI-Prompt-Toolkit-for-Primary-Teachers-v1.0.md"
 PAGEBREAK_LUA = ROOT / "build" / "pagebreak.lua"
+COVER = SOURCE / "assets" / "AI-Prompt-Toolkit-for-Primary-Teachers-cover.jpg"
+COVER_EXPORT = ROOT / "exports" / "covers" / "AI-Prompt-Toolkit-for-Primary-Teachers-cover.jpg"
 
 PARTS = [
     "000-front-matter.md",
@@ -36,6 +38,13 @@ def main() -> None:
     missing = [name for name in PARTS if not (SOURCE / name).exists()]
     if missing:
         fail("missing source files: " + ", ".join(missing))
+
+    if not COVER.exists():
+        fail(
+            "commercial cover asset is missing: "
+            + str(COVER)
+            + ". Add the approved customer-facing cover before building the release files."
+        )
 
     combined = "\n\n".join(
         (SOURCE / name).read_text(encoding="utf-8") for name in PARTS
@@ -80,6 +89,10 @@ def main() -> None:
             fail("built Markdown prompt numbering does not match source files")
         if not PAGEBREAK_RE.search(built):
             fail("built Markdown contains no portable PAGEBREAK markers")
+        if "../../books/commercial-primary-teacher/assets/AI-Prompt-Toolkit-for-Primary-Teachers-cover.jpg" not in built:
+            fail("built Markdown does not reference the commercial cover asset")
+        if "AI Prompt Toolkit for Primary Teachers" not in built:
+            fail("built Markdown is missing the cover/title reference")
 
         blocks = PROMPT_BLOCK_RE.findall(built)
         if len(blocks) != len(numbers):
@@ -119,10 +132,12 @@ def main() -> None:
     print("Commercial QA passed")
     print(f"Prompts: {len(numbers)}")
     print(f"Source files: {len(PARTS)}")
+    print(f"Cover asset: {COVER}")
     if BUILD.exists():
         print(f"Built Markdown: {BUILD}")
         print("Example values: validated for every variable used by every commercial prompt")
         print("Model compatibility: frontier-model agnostic")
+        print(f"Cover export: {COVER_EXPORT}")
     print("Opening author metadata: not rendered")
     print("Copy and paste label: explicit layout control")
     print("DOCX prompt container: enabled")
