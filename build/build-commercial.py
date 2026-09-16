@@ -1,9 +1,12 @@
 from pathlib import Path
 import re
+import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "books" / "commercial-primary-teacher"
 OUTPUT = ROOT / "exports" / "markdown" / "AI-Prompt-Toolkit-for-Primary-Teachers-v1.0.md"
+COVER = SOURCE / "assets" / "AI-Prompt-Toolkit-for-Primary-Teachers-cover.jpg"
+COVER_EXPORT = ROOT / "exports" / "covers" / "AI-Prompt-Toolkit-for-Primary-Teachers-cover.jpg"
 
 PARTS = [
     "000-front-matter.md",
@@ -41,6 +44,27 @@ def strip_yaml_front_matter(text: str) -> str:
         if end != -1:
             return text[end + 4 :].lstrip()
     return text
+
+
+def inject_cover(text: str) -> str:
+    if not COVER.exists():
+        raise SystemExit(
+            f"Missing commercial cover asset: {COVER}\n"
+            "Place the customer-facing cover image at this path before building."
+        )
+
+    # The generated Markdown lives under exports/markdown, so this relative
+    # path deliberately points back to the canonical source asset.
+    cover_ref = "../../books/commercial-primary-teacher/assets/AI-Prompt-Toolkit-for-Primary-Teachers-cover.jpg"
+    cover_block = (
+        f"![AI Prompt Toolkit for Primary Teachers]({cover_ref}){{width=6.53in height=9.80in}}\n\n"
+        f"{PAGE_BREAK}\n\n"
+    )
+
+    yaml_match = re.match(r"(?s)^(---\n.*?\n---\n\n)(.*)$", text)
+    if yaml_match:
+        return yaml_match.group(1) + cover_block + yaml_match.group(2)
+    return cover_block + text
 
 
 def infer_defaults(source_name: str, prompt: str) -> tuple[str, str, str]:
@@ -217,11 +241,18 @@ def load_sections() -> list[str]:
     missing = [name for name in PARTS if not (SOURCE / name).exists()]
     if missing:
         raise SystemExit("Missing commercial source files: " + ", ".join(missing))
+    if not COVER.exists():
+        raise SystemExit(
+            f"Missing commercial cover asset: {COVER}\n"
+            "Place the customer-facing cover image at this path before building."
+        )
 
     sections = []
     for name in PARTS:
         text = (SOURCE / name).read_text(encoding="utf-8")
-        if name != "000-front-matter.md":
+        if name == "000-front-matter.md":
+            text = inject_cover(text)
+        else:
             text = strip_yaml_front_matter(text)
             text = enrich_prompts(text, name)
         sections.append(text.rstrip())
@@ -231,11 +262,14 @@ def load_sections() -> list[str]:
 def main() -> None:
     sections = load_sections()
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    COVER_EXPORT.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(COVER, COVER_EXPORT)
     OUTPUT.write_text(
         f"\n\n{PAGE_BREAK}\n\n".join(sections) + "\n",
         encoding="utf-8",
     )
     print(f"Built {OUTPUT}")
+    print(f"Cover: {COVER_EXPORT}")
 
 
 if __name__ == "__main__":
