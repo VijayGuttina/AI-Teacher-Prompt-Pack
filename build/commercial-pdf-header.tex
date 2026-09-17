@@ -1,26 +1,92 @@
-% PDF layout controls for the Commercial V1 publication.
-% Keep the Markdown source unchanged. This file exists to make long
-% copy-and-paste prompt blocks wrap safely inside the A4 text area.
+% Commercial V1 PDF layout controls.
+% This header is deliberately independent from the DOCX reference template.
+% The PDF is generated directly from the canonical Markdown source.
 
+\usepackage{geometry}
+\geometry{a4paper,top=20mm,bottom=20mm,left=22mm,right=22mm,headheight=10mm,headsep=6mm,footskip=12mm}
+
+\usepackage{microtype}
+\microtypesetup{protrusion=false,expansion=false}
+
+\usepackage{xurl}
 \usepackage{fvextra}
+\usepackage{needspace}
+\usepackage{xcolor}
+\usepackage{framed}
+\usepackage{titling}
+\usepackage{titlesec}
+\usepackage{hyperref}
 
-% Pandoc uses the Highlighting verbatim environment for fenced code blocks.
-% Allow long prompt lines to wrap instead of running into the page margin.
-\RecustomVerbatimEnvironment{Highlighting}{Verbatim}{
-  breaklines=true,
-  breakanywhere=true,
-  fontsize=\small,
-  commandchars=\\\{\}
+% Restrained colour palette: professional, readable and suitable for print.
+\definecolor{brandteal}{HTML}{007C83}
+\definecolor{brandblue}{HTML}{2457A6}
+\definecolor{brandgold}{HTML}{C69214}
+\definecolor{promptbg}{HTML}{F2F8F8}
+\definecolor{promptborder}{HTML}{72B7B8}
+\definecolor{linkblue}{HTML}{2457A6}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=brandblue,
+  urlcolor=linkblue,
+  citecolor=brandblue
 }
 
-% Also protect ordinary verbatim blocks if Pandoc emits them.
+% The prompt container uses the shaded environment. Keep the styling limited
+% to commands supported by the standard framed package used by MiKTeX.
+\FrameRule=0.8pt
+\FrameSep=7pt
+\colorlet{shadecolor}{promptbg}
+
+% Bold, branded document title.
+\pretitle{\begin{center}\Huge\bfseries\color{brandteal}}
+\posttitle{\par\end{center}\vspace{0.5em}}
+
+% Colour the main structural headings without changing the underlying hierarchy.
+\titleformat{\section}
+  {\Large\bfseries\color{brandblue}}
+  {\thesection}
+  {0.75em}
+  {}
+\titleformat{\subsection}
+  {\large\bfseries\color{brandteal}}
+  {\thesubsection}
+  {0.75em}
+  {}
+\titleformat{\subsubsection}
+  {\normalsize\bfseries\color{brandgold}}
+  {\thesubsubsection}
+  {0.75em}
+  {}
+
+% XeLaTeX/LuaLaTeX Unicode-safe font handling.
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}
+\setsansfont{Latin Modern Sans}
+\setmonofont{Latin Modern Mono}
+
+% Latin Modern does not provide every Unicode symbol used by the source.
+\usepackage{newunicodechar}
+\newunicodechar{↪}{\ensuremath{\hookrightarrow}}
+\newunicodechar{→}{\ensuremath{\rightarrow}}
+\newunicodechar{⌋}{\ensuremath{\rfloor}}
+
+\setlength{\emergencystretch}{4em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35em}
+\tolerance=9999
+\pretolerance=1000
+\sloppy
+\raggedbottom
+
+% Keep ordinary verbatim blocks safe at the page edge. Do not redefine a
+% Highlighting environment here: the commercial Lua filter converts prompt
+% CodeBlocks into framed LaTeX before they reach this stage, and some Pandoc
+% versions do not define Highlighting for fvextra's Recustom command.
 \RecustomVerbatimEnvironment{Verbatim}{Verbatim}{
   breaklines=true,
-  breakanywhere=true,
+  breakanywhere=false,
+  breaksymbolleft={},
+  breaksymbolright={},
   fontsize=\small
 }
-
-% Give normal paragraphs a little additional flexibility before TeX resorts
-% to overfull boxes.
-\setlength{\emergencystretch}{3em}
-\sloppy
